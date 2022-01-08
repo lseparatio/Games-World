@@ -1,8 +1,25 @@
 h1,
-h2 {
+h2,
+h3 {
   text-align: center;
 }
 
 .hide {
   display: none;
+}
+
+body {
+  background-color: green;
+}
+
+#welcomeTop {
+  padding-top: 20px;
+}
+
+#presentationRow {
+  padding-top: 20px;
+}
+
+.gameColon {
+  padding-top: 20px;
 }
