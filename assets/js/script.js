@@ -1,3 +1,20 @@
+document.getElementById("inputName").focus();
+
+document.getElementById("inputName").addEventListener("keydown", function (event) {
+	if (event.key === "Enter") {
+		let userName = document.getElementById("inputName").value;
+		if (userName == "") {
+			document.getElementById(
+				"tellMeYourName"
+			).innerHTML = `I am not allowed to play with strangers so please tell me your name!`;
+		} else {
+			changeTopText(userName);
+			changeMiddleText();
+			chooseQuizCategory();
+		}
+	}
+});
+
 document.getElementById("submitButton").addEventListener("click", function () {
 	let userName = document.getElementById("inputName").value;
 	if (userName == "") {
@@ -28,7 +45,7 @@ function chooseQuizCategory() {
 		"gameContainer"
 	).innerHTML = `
 	<div class="row" id="game">
-<div class="col d-flex">
+<div class="col d-flex justify-content-center gameChoices">
 <div class="card" style="width: 18rem;">
 <img src="..." class="card-img-top" alt="...">
 <div class="card-body">
@@ -38,7 +55,7 @@ function chooseQuizCategory() {
 </div>
 </div>
 </div>
-<div class="col d-flex">
+<div class="col d-flex justify-content-center gameChoices">
 <div class="card" style="width: 18rem;">
 <img src="..." class="card-img-top" alt="...">
 <div class="card-body">
@@ -48,7 +65,7 @@ function chooseQuizCategory() {
 </div>
 </div>
 </div>
-<div class="col d-flex">
+<div class="col d-flex justify-content-center gameChoices">
 <div class="card" style="width: 18rem;">
 <img src="..." class="card-img-top" alt="...">
 <div class="card-body">
