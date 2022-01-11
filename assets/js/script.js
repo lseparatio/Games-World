@@ -29,7 +29,8 @@ document.getElementById("submitButton").addEventListener("click", function() {
 function changeTopText(userName) {
 	document.getElementById(
 		"welcomeTop"
-	).innerHTML = `<h1>Nice to meet you ${userName}!</h1>`;
+	).innerHTML = `<h1>Nice to meet you  <span id="userName">${userName}</span>!</h1>`;
+
 }
 
 function changeMiddleText() {
@@ -81,11 +82,21 @@ function chooseQuizCategory() {
 </div>
 </div>
 `;
-}
 
 document.getElementById("gameGeography").addEventListener("click", function() {
-	//Here will go question selection for first quesrion.
+	changeTopTextQuizScreen();
 });
+}
+
+function changeTopTextQuizScreen() {
+	let userName = document.getElementById("userName").innerHTML;
+	document.getElementById(
+		"welcomeTop"
+	).innerHTML = `<h1>I wish you luck ${userName}!</h1>`;
+	}
+
+
+
 
 const questionsGeography = [
 	{
