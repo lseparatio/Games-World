@@ -120,7 +120,12 @@ function startGameKids() {
 function addNextQuestion() {
 	showQuestion(shuffledQuestions[currentQuestionIndex]);
 	document.getElementById("next-btn").classList.add('hide');
-}
+	let questionNumber = 1;
+	questionNumber = ++currentQuestionIndex;
+	let questionLenght = shuffledQuestions.length;
+	document.getElementById("questionNumber").innerHTML =
+	`<h4 id="questionCounter">Question nr: ${questionNumber} from ${questionLenght} questions.</h3>`
+	}
 
 
 function changeTopTextQuizScreen() {
@@ -146,8 +151,6 @@ function addPointsToGameScreen() {
 		`;
 }
 
-
-
 function showQuestion(question) {
 	document.getElementById("gameContainer").innerHTML =
 		`
@@ -166,8 +169,7 @@ function showQuestion(question) {
 	</div>
 	<div class="container">
 		<div class="row">
-		 <div class="col-md-12">
-			<h4 id="questionCounter">Question nr: ${question.number} from ${question.length}</h3>
+		 <div id="questionNumber" class="col-md-12">
 		 </div>
 		</div>
 	 </div>
@@ -186,7 +188,6 @@ function showQuestion(question) {
 	});
 
 	document.getElementById("next-btn").addEventListener('click', () => {
-		currentQuestionIndex++;
 		addNextQuestion();
 	});
 }
@@ -202,10 +203,11 @@ function selectAnswer(e) {
 		
 
 	});
-	if (shuffledQuestions.length > currentQuestionIndex + 1) {
+	if (shuffledQuestions.length > currentQuestionIndex) {
 		document.getElementById('next-btn').classList.remove('hide');
 	} else {
 		//Left to add and end screen with options to this screen.
+	
 	}
 }
 
@@ -302,4 +304,55 @@ answers: [
 },
  ];
 
+ const questionsAnimal = [
+	{ question: "The 'prairie wolf' is an alternative name for which animal?",
+	answers: [
+		{ text: "Coyote", correct: true }, 
+		{ text: "Wolf", correct: false }, 
+		{ text: "Dingo", correct: false }, 
+		{ text: "Arctic Wolf", correct: false }
+	 ]
+},
+ {
+	question: "What are rhino’s horns made from?",
+	answers: [
+		{ text: "Cambodia", correct: false }, 
+		{ text: "Bone", correct: false }, 
+		{ text: "Hair", correct: true }, 
+		{ text: "Keratin", correct: false }
+	 ]
+}, 
+{
+	question: "The primary diet of blue whales are what tiny shrimp-like animals?",
+	answers: [
+		{ text: "Algae", correct: false }, 
+	  {	text: "Krill", correct: true }, 
+		{ text: "Worms", correct: false }, 
+		{ text: "Daphnia", correct: false}
+	]
+},
+{ question: "Which group of mammals are commonly thought of as pouched mammals?",
+answers: [
+	{ text: "Eutheria", correct: false }, 
+	{ text: "Marsupials", correct: true }, 
+	{ text: "Prototheria", correct: false }
+ ]
+},
+{
+question: "How many legs does a scorpion have?",
+answers: [
+	{ text: "8 legs", correct: true }, 
+	{ text: "4 legs", correct: false }, 
+	{ text: "12 legs", correct: false }, 
+	{ text: "2 legs", correct: false }
+ ]
+}, 
+{
+question: "What animals can also be known as Hominoidea?",
+answers: [
+	{ text: "Monkeys", correct: false }, 
+	{ text: "Apes", correct: true}
+]
+},
+ ];
 
