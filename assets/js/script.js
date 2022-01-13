@@ -1,24 +1,24 @@
 document.getElementById("inputName").focus();
 
 document.getElementById("inputName").addEventListener("keydown", function(event) {
-		if (event.key === "Enter") {
-			let userName = document.getElementById("inputName").value;
-			if (userName == "") {
-				document.getElementById("tellMeYourName").innerHTML = 
+	if (event.key === "Enter") {
+		let userName = document.getElementById("inputName").value;
+		if (userName == "") {
+			document.getElementById("tellMeYourName").innerHTML =
 				`I am not allowed to play with strangers so please tell me your name!`;
-			} else {
-				changeTopText(userName);
-				changeMiddleText();
-				chooseQuizCategory();
-			}
+		} else {
+			changeTopText(userName);
+			changeMiddleText();
+			chooseQuizCategory();
 		}
-	});
+	}
+});
 
 document.getElementById("submitButton").addEventListener("click", function() {
 	let userName = document.getElementById("inputName").value;
 	if (userName == "") {
-		document.getElementById("tellMeYourName").innerHTML = 
-		`I am not allowed to play with strangers so please tell me your name!`;
+		document.getElementById("tellMeYourName").innerHTML =
+			`I am not allowed to play with strangers so please tell me your name!`;
 	} else {
 		changeTopText(userName);
 		changeMiddleText();
@@ -30,15 +30,15 @@ function changeTopText(userName) {
 	document.getElementById(
 		"welcomeTop"
 	).innerHTML = `<h1>Nice to meet you  <span id="userName">${userName}</span>!</h1>`;
-
 }
 
 function changeMiddleText() {
-	document.getElementById("welcomeMiddle").innerHTML = 
-	`<h2>Do you think that you are ready to test your knowledge? Choose a category!</h2>`;
+	document.getElementById("welcomeMiddle").innerHTML =
+		`<h2>Do you think that you are ready to test your knowledge? Choose a category!</h2>`;
 }
 
-/* Function to show bootstrap tags with images and
+/* *
+ *Function to show bootstrap cards with images and
  *  to be able to choose one category.
  */
 function chooseQuizCategory() {
@@ -63,7 +63,7 @@ function chooseQuizCategory() {
 	<h5 class="card-title">Animal Quiz</h5>
 	<p class="card-text">30 Quiz Questions</p>
 	<div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">Play Quiz</button>
+  <button id="gameAnimal" class="btn btn-primary" type="button">Play Quiz</button>
 	</div>
 </div>
 </div>
@@ -75,55 +75,231 @@ function chooseQuizCategory() {
 	<h5 class="card-title">Kids Quiz</h5>
 	<p class="card-text">30 Quiz Questions</p>
 	<div class="d-grid gap-2">
-  <button class="btn btn-primary" type="button">Play Quiz</button>
+  <button id="gameKids" class="btn btn-primary" type="button">Play Quiz</button>
 	</div>
 </div>
 </div>
 </div>
 </div>
 `;
-
-document.getElementById("gameGeography").addEventListener("click", function() {
-	changeTopTextQuizScreen();
-});
+	startGameGeography();
+	startGameAnimal();
+	startGameKids();
 }
+
+function startGameGeography() {
+	document.getElementById("gameGeography").addEventListener("click", function() {
+		changeTopTextQuizScreen();
+		addPointsToGameScreen();
+		shuffledQuestions = questionsGeography.sort(() => Math.random() - 0.5);
+		currentQuestionIndex = 0;
+		addNextQuestion();
+	});
+}
+
+function startGameAnimal() {
+	document.getElementById("gameAnimal").addEventListener("click", function() {
+		changeTopTextQuizScreen();
+		addPointsToGameScreen();
+		shuffledQuestions = questionsAnimal.sort(() => Math.random() - 0.5);
+		currentQuestionIndex = 0;
+		addNextQuestion();
+	});
+}
+
+function startGameKids() {
+	document.getElementById("gameKids").addEventListener("click", function() {
+		changeTopTextQuizScreen();
+		addPointsToGameScreen();
+		shuffledQuestions = questionsAnimal.sort(() => Math.random() - 0.5);
+		currentQuestionIndex = 0;
+		addNextQuestion();
+	});
+}
+
+function addNextQuestion() {
+	showQuestion(shuffledQuestions[currentQuestionIndex]);
+	document.getElementById("next-btn").classList.add('hide');
+}
+
 
 function changeTopTextQuizScreen() {
 	let userName = document.getElementById("userName").innerHTML;
 	document.getElementById(
 		"welcomeTop"
 	).innerHTML = `<h1>I wish you luck ${userName}!</h1>`;
+}
+
+function addPointsToGameScreen() {
+	document.getElementById("welcomeMiddle").innerHTML =
+		`
+		<div class="container">
+		 <div class="row">
+		  <div class="col-md-6">
+		   <h2>Correct Answers: <span id="correctAnswers">0</span></h2>
+		  </div>
+		  <div class="col-md-6">
+		   <h2>Wrong Answers: <span id="wrongAnswers">0</span></h2>
+		  </div>
+		 </div>
+		</div>
+		`;
+}
+
+
+
+function showQuestion(question) {
+	document.getElementById("gameContainer").innerHTML =
+		`
+		<div class="container">
+		<div class="row">
+		 <div class="col-md-12">
+			<h3 id="question">${question.question}</h3>
+		 </div>
+		</div>
+	 </div>
+	 <div id="answer-buttons" class="d-grid gap-2 col-12 mx-auto buttonsGrid">
+
+ </div>
+ <div class="d-grid gap-2 col-12 mx-auto">
+  <button id="next-btn" class="btn btn-primary" type="button">Next</button>
+	</div>
+	<div class="container">
+		<div class="row">
+		 <div class="col-md-12">
+			<h4 id="questionCounter">Question nr: ${question.number} from ${question.length}</h3>
+		 </div>
+		</div>
+	 </div>
+
+		`;
+
+	question.answers.forEach(answer => {
+		const button = document.createElement('button');
+		button.innerText = answer.text;
+		button.classList.add("btn");
+		if (answer.correct) {
+			button.dataset.correct = answer.correct;
+		}
+		button.addEventListener('click', selectAnswer);
+		document.getElementById("answer-buttons").appendChild(button);
+	});
+
+	document.getElementById("next-btn").addEventListener('click', () => {
+		currentQuestionIndex++;
+		addNextQuestion();
+	});
+}
+
+
+
+function selectAnswer(e) {
+	const selectedButton = e.target;
+	const correct = selectedButton.dataset.correct;
+	
+	Array.from(document.getElementById("answer-buttons").children).forEach(button => {
+		setStatusClass(button, button.dataset.correct);
+		
+
+	});
+	if (shuffledQuestions.length > currentQuestionIndex + 1) {
+		document.getElementById('next-btn').classList.remove('hide');
+	} else {
+		//Left to add and end screen with options to this screen.
 	}
+}
+
+
+
+function setStatusClass(element, correct) {
+	clearStatusClass(element);
+	if (correct) {
+		element.classList.add('correct');
+		element.disabled = true;
+		
+	} else {
+		element.classList.add('wrong');
+		element.disabled = true;
+		
+	}
+}
+
+function clearStatusClass(element) {
+	element.classList.remove('correct');
+	element.classList.remove('wrong');
+}
+
+
+function incrementScore() {
+
+	let oldScore = parseInt(document.getElementById("correctAnswers").innerText);
+	document.getElementById("correctAnswers").innerText = ++oldScore;
+
+}
+
+function incrementWrongAnswer() {
+
+	let oldScore = parseInt(document.getElementById("wrongAnswers").innerText);
+	document.getElementById("wrongAnswers").innerText = ++oldScore;
+
+}
 
 
 
 
 const questionsGeography = [
-	{
-	question: "Which country is the largest landlocked country in the world?",
+	{ question: "Which country is the largest landlocked country in the world?",
 	answers: [
-		{ text: "Kazakhstan", correct: true}, 
-		{ text: "Rusia", correct: false },
-	  { text: "China", correct: false }, 
-		{ text: "Afganistan", correct: false }, 
-	]
-}, 
-{
+		{ text: "Kazakhstan", correct: true }, 
+		{ text: "Rusia", correct: false }, 
+		{ text: "China", correct: false }, 
+		{ text: "Afganistan", correct: false }
+	 ]
+},
+ {
 	question: "Mount Kosciuszko is the highest mountain in which country?",
 	answers: [
 		{ text: "Cambodia", correct: false }, 
 		{ text: "Japan", correct: false }, 
 		{ text: "Australia", correct: true }, 
-		{ text: "Botswana", correct: false }, 
-	]
+		{ text: "Botswana", correct: false }
+	 ]
 }, 
-{ 
-	question: " Tobruk is a port city in which country?",
+{
+	question: "Tobruk is a port city in which country?",
 	answers: [
 		{ text: "Madagascar", correct: false }, 
-		{ text: "Ireland", correct: false }, 
-		{ text: "Mauritius", correct: false },
-		{ text: "Libya", correct: true}, 
+	  {	text: "Ireland", correct: false }, 
+		{ text: "Mauritius", correct: false }, 
+		{ text: "Libya", correct: true}
 	]
+},
+{ question: "Which country is the squarest country on earth?",
+answers: [
+	{ text: "Micronesia", correct: false }, 
+	{ text: "Egypt", correct: true }, 
+	{ text: "Poland", correct: false }, 
+	{ text: "Oman", correct: false }
+ ]
+},
+{
+question: "Name the only two landlocked countries in South America?",
+answers: [
+	{ text: "Ecuador and Venezuela", correct: false }, 
+	{ text: "Bolivia and Uruguay", correct: false }, 
+	{ text: "Peru and Brazil", correct: false }, 
+	{ text: "Bolivia and Paraguay", correct: true }
+ ]
 }, 
-];
+{
+question: "Name Scotland's fourth-largest city?",
+answers: [
+	{ text: "Edinburgh", correct: false }, 
+	{	text: "Dundee", correct: true }, 
+	{ text: "Stirling", correct: false }, 
+	{ text: "Aberdeen", correct: false}
+]
+},
+ ];
+
+

@@ -11,7 +11,7 @@ h5 {
 }
 
 body {
-  background-color: green;
+  background-color: aliceblue;
 }
 
 #welcomeTop {
@@ -29,4 +29,22 @@ body {
 
 p {
   text-align: center;
+}
+
+
+.correct {
+  
+  background-color: green;
+}
+
+.wrong {
+  background-color: red;
+}
+
+.buttonsGrid {
+  margin-top: 30px;
+}
+
+#next-btn {
+  margin-top: 30px;
 }
