@@ -111,7 +111,7 @@ function startGameKids() {
 	document.getElementById("gameKids").addEventListener("click", function() {
 		changeTopTextQuizScreen();
 		addPointsToGameScreen();
-		shuffledQuestions = questionsAnimal.sort(() => Math.random() - 0.5);
+		shuffledQuestions = questionsKids.sort(() => Math.random() - 0.5);
 		currentQuestionIndex = 0;
 		addNextQuestion();
 	});
@@ -233,17 +233,12 @@ function clearStatusClass(element) {
 
 
 function incrementScore() {
-
-	let oldScore = parseInt(document.getElementById("correctAnswers").innerText);
+let oldScore = parseInt(document.getElementById("correctAnswers").innerText);
 	document.getElementById("correctAnswers").innerText = ++oldScore;
-
 }
 
 function incrementWrongAnswer() {
-
-	let oldScore = parseInt(document.getElementById("wrongAnswers").innerText);
-	document.getElementById("wrongAnswers").innerText = ++oldScore;
-
+let oldScore = parseInt(document.getElementById("wrongAnswers").innerText);
 }
 
 
@@ -305,6 +300,59 @@ answers: [
  ];
 
  const questionsAnimal = [
+	{ question: "The 'prairie wolf' is an alternative name for which animal?",
+	answers: [
+		{ text: "Coyote", correct: true }, 
+		{ text: "Wolf", correct: false }, 
+		{ text: "Dingo", correct: false }, 
+		{ text: "Arctic Wolf", correct: false }
+	 ]
+},
+ {
+	question: "What are rhino’s horns made from?",
+	answers: [
+		{ text: "Cambodia", correct: false }, 
+		{ text: "Bone", correct: false }, 
+		{ text: "Hair", correct: true }, 
+		{ text: "Keratin", correct: false }
+	 ]
+}, 
+{
+	question: "The primary diet of blue whales are what tiny shrimp-like animals?",
+	answers: [
+		{ text: "Algae", correct: false }, 
+	  {	text: "Krill", correct: true }, 
+		{ text: "Worms", correct: false }, 
+		{ text: "Daphnia", correct: false}
+	]
+},
+{ question: "Which group of mammals are commonly thought of as pouched mammals?",
+answers: [
+	{ text: "Eutheria", correct: false }, 
+	{ text: "Marsupials", correct: true }, 
+	{ text: "Prototheria", correct: false }
+ ]
+},
+{
+question: "How many legs does a scorpion have?",
+answers: [
+	{ text: "8 legs", correct: true }, 
+	{ text: "4 legs", correct: false }, 
+	{ text: "12 legs", correct: false }, 
+	{ text: "2 legs", correct: false }
+ ]
+}, 
+{
+question: "What animals can also be known as Hominoidea?",
+answers: [
+	{ text: "Monkeys", correct: false }, 
+	{ text: "Apes", correct: true}
+]
+},
+ ];
+
+
+ const questionsKids = [
 	{ question: "The 'prairie wolf' is an alternative name for which animal?",
 	answers: [
 		{ text: "Coyote", correct: true }, 
