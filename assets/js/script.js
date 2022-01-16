@@ -4,12 +4,12 @@ document.getElementById("inputName").addEventListener("keydown", function(event)
 	if (event.key === "Enter") {
 		localStorage.setItem("userName", document.getElementById("inputName").value);
 		let userName = localStorage.getItem("userName");
-		if (userName == "") {
+		if (userName === "") {
+			changeTopTextNoUsername();
 			document.getElementById("tellMeYourName").innerHTML =
 				`I am not allowed to play with strangers so please tell me your name!`;
 		} else {
 			changeTopText(userName);
-			changeMiddleText();
 			chooseQuizCategory();
 		}
 	}
@@ -18,7 +18,8 @@ document.getElementById("inputName").addEventListener("keydown", function(event)
 document.getElementById("submitButton").addEventListener("click", function() {
 	localStorage.setItem("userName", document.getElementById("inputName").value);
 	let userName = localStorage.getItem("userName");
-	if (userName == "") {
+	if (userName === "") {
+		changeTopTextNoUsername();
 		document.getElementById("tellMeYourName").innerHTML =
 			`I am not allowed to play with strangers so please tell me your name!`;
 	} else {
@@ -26,6 +27,10 @@ document.getElementById("submitButton").addEventListener("click", function() {
 		chooseQuizCategory();
 	}
 });
+
+function changeTopTextNoUsername() {
+	document.getElementById("welcomeMiddle").innerHTML = `<h1>Sorry!!</h1>`
+}
 
 function changeTopText(userName) {
 	document.getElementById(
