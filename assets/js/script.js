@@ -2,7 +2,8 @@ document.getElementById("inputName").focus();
 
 document.getElementById("inputName").addEventListener("keydown", function(event) {
 	if (event.key === "Enter") {
-		let userName = document.getElementById("inputName").value;
+		localStorage.setItem("userName", document.getElementById("inputName").value);
+		let userName = localStorage.getItem("userName");
 		if (userName == "") {
 			document.getElementById("tellMeYourName").innerHTML =
 				`I am not allowed to play with strangers so please tell me your name!`;
@@ -15,7 +16,8 @@ document.getElementById("inputName").addEventListener("keydown", function(event)
 });
 
 document.getElementById("submitButton").addEventListener("click", function() {
-	let userName = document.getElementById("inputName").value;
+	localStorage.setItem("userName", document.getElementById("inputName").value);
+	let userName = localStorage.getItem("userName");
 	if (userName == "") {
 		document.getElementById("tellMeYourName").innerHTML =
 			`I am not allowed to play with strangers so please tell me your name!`;
@@ -128,12 +130,12 @@ function addNextQuestion() {
 	}
 
 
-function changeTopTextQuizScreen() {
-	let userName = document.getElementById("userName").innerHTML;
-	document.getElementById(
-		"welcomeTop"
-	).innerHTML = `<h1>I wish you luck ${userName}!</h1>`;
-}
+	function changeTopTextQuizScreen() {
+		let userName = localStorage.getItem("userName");
+		document.getElementById (
+			"welcomeTop"
+		).innerHTML = `<h1>I wish you luck ${userName}!</h1>`;
+	}
 
 function addPointsToGameScreen() {
 	document.getElementById("welcomeMiddle").innerHTML =
@@ -166,6 +168,8 @@ function showQuestion(question) {
  </div>
  <div class="d-grid gap-2 col-12 mx-auto">
   <button id="next-btn" class="btn btn-primary" type="button">Next</button>
+	<button id="finish-btn" class="btn btn-primary hide" type="button">Go To Main Screen</button>
+	<button id="chooseTopic" class="btn btn-primary hide" type="button">Choose another Topic</button>
 	</div>
 	<div class="container">
 		<div class="row">
@@ -173,8 +177,7 @@ function showQuestion(question) {
 		 </div>
 		</div>
 	 </div>
-
-		`;
+    `;
 
 	question.answers.forEach(answer => {
 		const button = document.createElement('button');
@@ -186,13 +189,10 @@ function showQuestion(question) {
 		button.addEventListener('click', selectAnswer);
 		document.getElementById("answer-buttons").appendChild(button);
 	});
-
-	document.getElementById("next-btn").addEventListener('click', () => {
+   document.getElementById("next-btn").addEventListener('click', () => {
 		addNextQuestion();
 	});
 }
-
-
 
 function selectAnswer(e) {
 	const selectedButton = e.target;
@@ -200,29 +200,31 @@ function selectAnswer(e) {
 	
 	Array.from(document.getElementById("answer-buttons").children).forEach(button => {
 		setStatusClass(button, button.dataset.correct);
-		
-
 	});
 	if (shuffledQuestions.length > currentQuestionIndex) {
 		document.getElementById('next-btn').classList.remove('hide');
 	} else {
-		//Left to add and end screen with options to this screen.
-	
+		let chooseTopic = document.getElementById("chooseTopic");
+		chooseTopic.classList.remove("hide");
+		chooseTopic.addEventListener('click', function(){
+			chooseQuizCategory();
+		})
+    let goToMainScreen = document.getElementById("finish-btn");
+		goToMainScreen.classList.remove("hide");
+		goToMainScreen.addEventListener("click", function(){
+			window.location.reload();
+		})
 	}
 }
-
-
 
 function setStatusClass(element, correct) {
 	clearStatusClass(element);
 	if (correct) {
 		element.classList.add('correct');
 		element.disabled = true;
-		
 	} else {
 		element.classList.add('wrong');
 		element.disabled = true;
-		
 	}
 }
 
@@ -231,7 +233,6 @@ function clearStatusClass(element) {
 	element.classList.remove('wrong');
 }
 
-
 function incrementScore() {
 let oldScore = parseInt(document.getElementById("correctAnswers").innerText);
 	document.getElementById("correctAnswers").innerText = ++oldScore;
@@ -239,6 +240,7 @@ let oldScore = parseInt(document.getElementById("correctAnswers").innerText);
 
 function incrementWrongAnswer() {
 let oldScore = parseInt(document.getElementById("wrongAnswers").innerText);
+document.getElementById("wrongAnswers").innerText = ++oldScore;
 }
 
 
@@ -353,21 +355,21 @@ answers: [
 
 
  const questionsKids = [
-	{ question: "The 'prairie wolf' is an alternative name for which animal?",
+	{ question: "How many days are there in a fortnight?",
 	answers: [
-		{ text: "Coyote", correct: true }, 
-		{ text: "Wolf", correct: false }, 
-		{ text: "Dingo", correct: false }, 
-		{ text: "Arctic Wolf", correct: false }
+		{ text: "14 days", correct: true }, 
+		{ text: "4 days", correct: false }, 
+		{ text: "40 days", correct: false }, 
+		{ text: "44 days", correct: false }
 	 ]
 },
  {
-	question: "What are rhino’s horns made from?",
+	question: "What sweet food substance is made by bees?",
 	answers: [
-		{ text: "Cambodia", correct: false }, 
-		{ text: "Bone", correct: false }, 
-		{ text: "Hair", correct: true }, 
-		{ text: "Keratin", correct: false }
+		{ text: "Propolis", correct: false }, 
+		{ text: "Wax", correct: false }, 
+		{ text: "Honey", correct: true }, 
+		{ text: "Pollen", correct: false }
 	 ]
 }, 
 {
@@ -403,4 +405,3 @@ answers: [
 ]
 },
  ];
-
