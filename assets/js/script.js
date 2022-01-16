@@ -53,7 +53,7 @@ function chooseQuizCategory() {
 	<h5 class="card-title">Geography Quiz</h5>
 	<p class="card-text">30 Quiz Questions</p>
 	<div class="d-grid gap-2">
-  <button id="gameGeography" class="btn btn-primary" type="button">Play Quiz</button>
+  <button id="gameGeography" class="btn" type="button">Play Quiz</button>
 	</div>
 </div>
 </div>
@@ -65,7 +65,7 @@ function chooseQuizCategory() {
 	<h5 class="card-title">Animal Quiz</h5>
 	<p class="card-text">30 Quiz Questions</p>
 	<div class="d-grid gap-2">
-  <button id="gameAnimal" class="btn btn-primary" type="button">Play Quiz</button>
+  <button id="gameAnimal" class="btn" type="button">Play Quiz</button>
 	</div>
 </div>
 </div>
@@ -77,7 +77,7 @@ function chooseQuizCategory() {
 	<h5 class="card-title">Kids Quiz</h5>
 	<p class="card-text">30 Quiz Questions</p>
 	<div class="d-grid gap-2">
-  <button id="gameKids" class="btn btn-primary" type="button">Play Quiz</button>
+  <button id="gameKids" class="btn" type="button">Play Quiz</button>
 	</div>
 </div>
 </div>
@@ -167,9 +167,9 @@ function showQuestion(question) {
 
  </div>
  <div class="d-grid gap-2 col-12 mx-auto">
-  <button id="next-btn" class="btn btn-primary" type="button">Next</button>
-	<button id="finish-btn" class="btn btn-primary hide" type="button">Go To Main Screen</button>
-	<button id="chooseTopic" class="btn btn-primary hide" type="button">Choose another Topic</button>
+  <button id="next-btn" class="btn" type="button">Next</button>
+	<button id="finish-btn" class="btn hide" type="button">Go To Main Screen</button>
+	<button id="chooseTopic" class="btn hide" type="button">Choose another Topic</button>
 	</div>
 	<div class="container">
 		<div class="row">
