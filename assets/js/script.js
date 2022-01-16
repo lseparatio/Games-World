@@ -23,7 +23,6 @@ document.getElementById("submitButton").addEventListener("click", function() {
 			`I am not allowed to play with strangers so please tell me your name!`;
 	} else {
 		changeTopText(userName);
-		changeMiddleText();
 		chooseQuizCategory();
 	}
 });
@@ -34,9 +33,11 @@ function changeTopText(userName) {
 	).innerHTML = `<h1>Nice to meet you  <span id="userName">${userName}</span>!</h1>`;
 }
 
-function changeMiddleText() {
-	document.getElementById("welcomeMiddle").innerHTML =
-		`<h2>Do you think that you are ready to test your knowledge? Choose a category!</h2>`;
+function changeTopTextOnReturn() {
+	let userName = localStorage.getItem("userName");
+	document.getElementById(
+		"welcomeTop"
+	).innerHTML = `<h1>Wellcome back <span id="userName">${userName}</span>!</h1>`;
 }
 
 /* *
@@ -44,6 +45,8 @@ function changeMiddleText() {
  *  to be able to choose one category.
  */
 function chooseQuizCategory() {
+	document.getElementById("welcomeMiddle").innerHTML =
+		`<h2>Do you think that you are ready to test your knowledge? Choose a category!</h2>`;
 	document.getElementById("gameContainer").innerHTML = `
 	<div class="row" id="game">
 <div class="col d-flex justify-content-center gameGeography gameChoices">
@@ -126,7 +129,7 @@ function addNextQuestion() {
 	questionNumber = ++currentQuestionIndex;
 	let questionLenght = shuffledQuestions.length;
 	document.getElementById("questionNumber").innerHTML =
-	`<h4 id="questionCounter">Question nr: ${questionNumber} from ${questionLenght} questions.</h3>`
+	`<h4 id="questionCounter">Question nr: ${questionNumber} from ${questionLenght} questions.</h3>`;
 	}
 
 
@@ -141,7 +144,7 @@ function addPointsToGameScreen() {
 	document.getElementById("welcomeMiddle").innerHTML =
 		`
 		<div class="container">
-		 <div class="row">
+		 <div id="score" class="row">
 		  <div class="col-md-6">
 		   <h2>Correct Answers: <span id="correctAnswers">0</span></h2>
 		  </div>
@@ -173,7 +176,7 @@ function showQuestion(question) {
 	</div>
 	<div class="container">
 		<div class="row">
-		 <div id="questionNumber" class="col-md-12">
+		 <div id="questionNumber" class="col-md-12 fixed-bottom">
 		 </div>
 		</div>
 	 </div>
@@ -207,13 +210,14 @@ function selectAnswer(e) {
 		let chooseTopic = document.getElementById("chooseTopic");
 		chooseTopic.classList.remove("hide");
 		chooseTopic.addEventListener('click', function(){
+			changeTopTextOnReturn();
 			chooseQuizCategory();
-		})
+		});
     let goToMainScreen = document.getElementById("finish-btn");
 		goToMainScreen.classList.remove("hide");
 		goToMainScreen.addEventListener("click", function(){
 			window.location.reload();
-		})
+		});
 	}
 }
 
