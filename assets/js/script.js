@@ -200,6 +200,7 @@ function showQuestion(question) {
    document.getElementById("next-btn").addEventListener('click', () => {
 		addNextQuestion();
 	});
+	
 }
 
 function selectAnswer(e) {
@@ -234,12 +235,22 @@ function setStatusClass(element, correct) {
 	} else {
 		element.classList.add('wrong');
 		element.disabled = true;
+		
 	}
 }
 
 function clearStatusClass(element) {
 	element.classList.remove('correct');
 	element.classList.remove('wrong');
+}
+
+function ceckScore(){
+	let button =  document.getElementsByTagName("button");
+	button.addEventListener("click", function(){
+		if (this.button.getAtt){
+			incrementScore();
+		}
+	});
 }
 
 function incrementScore() {
