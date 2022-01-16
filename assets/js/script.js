@@ -29,7 +29,7 @@ document.getElementById("submitButton").addEventListener("click", function() {
 });
 
 function changeTopTextNoUsername() {
-	document.getElementById("welcomeMiddle").innerHTML = `<h1>Sorry!!</h1>`
+	document.getElementById("welcomeMiddle").innerHTML = `<h1>Sorry!!</h1>`;
 }
 
 function changeTopText(userName) {
@@ -172,7 +172,6 @@ function showQuestion(question) {
 		</div>
 	 </div>
 	 <div id="answer-buttons" class="d-grid gap-2 col-12 mx-auto buttonsGrid">
-
  </div>
  <div class="d-grid gap-2 col-12 mx-auto">
   <button id="next-btn" class="btn" type="button">Next</button>
@@ -190,7 +189,7 @@ function showQuestion(question) {
 	question.answers.forEach(answer => {
 		const button = document.createElement('button');
 		button.innerText = answer.text;
-		button.classList.add("btn");
+		button.classList.add("btn", "answers");
 		if (answer.correct) {
 			button.dataset.correct = answer.correct;
 		}
@@ -199,9 +198,10 @@ function showQuestion(question) {
 	});
    document.getElementById("next-btn").addEventListener('click', () => {
 		addNextQuestion();
-	});
-	
+	});	
 }
+
+
 
 function selectAnswer(e) {
 	const selectedButton = e.target;
@@ -227,6 +227,7 @@ function selectAnswer(e) {
 	}
 }
 
+
 function setStatusClass(element, correct) {
 	clearStatusClass(element);
 	if (correct) {
@@ -240,17 +241,9 @@ function setStatusClass(element, correct) {
 }
 
 function clearStatusClass(element) {
+
 	element.classList.remove('correct');
 	element.classList.remove('wrong');
-}
-
-function ceckScore(){
-	let button =  document.getElementsByTagName("button");
-	button.addEventListener("click", function(){
-		if (this.button.getAtt){
-			incrementScore();
-		}
-	});
 }
 
 function incrementScore() {
@@ -262,6 +255,20 @@ function incrementWrongAnswer() {
 let oldScore = parseInt(document.getElementById("wrongAnswers").innerText);
 document.getElementById("wrongAnswers").innerText = ++oldScore;
 }
+
+
+document.addEventListener("click", function() {
+	let buttons = document.getElementsByClassName("answers");
+	for (let button of buttons) {
+		button.addEventListener("click", function() {
+			if (this.getAttribute("data-correct") === "true") {
+				incrementScore();
+			} else {
+				incrementWrongAnswer();
+			}
+		});
+	}
+});
 
 
 
@@ -425,3 +432,5 @@ answers: [
 ]
 },
  ];
+
+ 
