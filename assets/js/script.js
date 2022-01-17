@@ -180,7 +180,7 @@ function showQuestion(question) {
 	</div>
 	<div class="container">
 		<div class="row">
-		 <div id="questionNumber" class="col-md-12 fixed-bottom">
+		 <div id="questionNumber" class="col-md-12">
 		 </div>
 		</div>
 	 </div>
