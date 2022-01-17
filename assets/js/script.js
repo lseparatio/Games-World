@@ -262,8 +262,10 @@ document.addEventListener("click", function() {
 	for (let button of buttons) {
 		button.addEventListener("click", function() {
 			if (this.getAttribute("data-correct") === "true") {
+				console.log("Correct Answer");
 				incrementScore();
 			} else {
+				console.log("Incorrect Answer");
 				incrementWrongAnswer();
 			}
 		});
@@ -318,12 +320,64 @@ answers: [
  ]
 }, 
 {
-question: "Name Scotland's fourth-largest city?",
+question: "Name Scotland fourth-largest city?",
 answers: [
 	{ text: "Edinburgh", correct: false }, 
 	{	text: "Dundee", correct: true }, 
 	{ text: "Stirling", correct: false }, 
 	{ text: "Aberdeen", correct: false}
+]
+},
+{ question: "The world highest uninterrupted waterfall, The Angel Falls, is in which country?",
+answers: [
+	{ text: "Venezuela", correct: true }, 
+	{ text: "Guyana", correct: false }, 
+	{ text: "Suriname", correct: false }, 
+	{ text: "French Guiana", correct: false }
+ ]
+},
+{
+question: "Which British river name is derived from the Anglo-Saxon language for \“boundary river\”?",
+answers: [
+	{ text: "Cam Beck", correct: false }, 
+	{ text: "River Ellen", correct: false }, 
+	{ text: "Mersey", correct: true }, 
+	{ text: "River Keekle", correct: false }
+ ]
+}, 
+{
+question: "How many countries in the world have names that start with the letter 'J'?",
+answers: [
+	{ text: "7", correct: false }, 
+	{	text: "1", correct: false }, 
+	{ text: "5", correct: false }, 
+	{ text: "3", correct: true}
+]
+},
+{ question: "Antananarivo is the largest city in which country?",
+answers: [
+{ text: "Mozambique", correct: false }, 
+{ text: "Madagascar", correct: true }, 
+{ text: "Zimbabwe", correct: false }, 
+{ text: "Malawi", correct: false }
+]
+},
+{
+question: "Which motorway in the UK is the longest?",
+answers: [
+{ text: "M5", correct: false }, 
+{ text: "M3", correct: false }, 
+{ text: "M1", correct: false }, 
+{ text: "M6", correct: true }
+]
+}, 
+{
+question: "How many national parks are there in Wales?",
+answers: [
+{ text: "5", correct: false }, 
+{	text: "3", correct: true }, 
+{ text: "8", correct: false }, 
+{ text: "2", correct: false}
 ]
 },
  ];
