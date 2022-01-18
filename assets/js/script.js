@@ -175,9 +175,9 @@ function showQuestion(question) {
 	 <div id="answer-buttons" class="d-grid gap-2 col-12 mx-auto buttonsGrid">
  </div>
  <div class="d-grid gap-2 col-12 mx-auto">
-  <button id="next-btn" class="btn" type="button">Next</button>
-	<button id="finish-btn" class="btn hide" type="button">Go To Main Screen</button>
-	<button id="chooseTopic" class="btn hide" type="button">Choose another Topic</button>
+  <button id="next-btn" class="btn btn-primary" type="button">Next</button>
+	<button id="finish-btn" class="btn btn-primary hide" type="button">Go To Main Screen</button>
+	<button id="chooseTopic" class="btn btn-primary hide" type="button">Choose another Topic</button>
 	</div>
 	<div class="container">
 		<div class="row">
@@ -190,7 +190,7 @@ function showQuestion(question) {
 	question.answers.forEach(answer => {
 		const button = document.createElement('button');
 		button.innerText = answer.text;
-		button.classList.add("btn", "answers");
+		button.classList.add("btn", "answers", "btn-primary");
 		if (answer.correct) {
 			button.dataset.correct = answer.correct;
 		}

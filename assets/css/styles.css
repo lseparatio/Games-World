@@ -1,9 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap');
+
 h1,
 h2,
 h3,
 h4,
 h5 {
+  font-family: 'Luxurious Roman', cursive;
   text-align: center;
+  color: #ffffff;
 }
 
 .hide {
@@ -11,7 +15,7 @@ h5 {
 }
 
 body {
-  background-color: aliceblue;
+  background-color: #183BFF;
   
 }
 
@@ -30,20 +34,33 @@ body {
 }
 
 p {
+  font-family: 'Luxurious Roman', cursive;
   text-align: center;
+  color: #ffffff;
 }
 
 .btn {
+  font-family: 'Luxurious Roman', cursive;
   background-color: aquamarine;
+}
+
+.btn:focus {
+  font-family: 'Luxurious Roman', cursive;
+  background-color: aquamarine;
+  box-shadow: 0 0 0 0 red;
+  border-color: brown;
 
 }
 
-.correct {
-  background-color: green;
+.correct:disabled {
+  color: #ffffff;
+  background-color: #17fc03;
 }
 
-.wrong {
-  background-color: red;
+.wrong:disabled {
+  background-color: #e41111;
+  color: #ffffff;
+  box-shadow: none;
 }
 
 .buttonsGrid {
@@ -69,4 +86,8 @@ footer {
 #questionNumber {
   padding-top: 30px;
   padding-bottom:  30px;
+}
+
+#gameRow {
+  font-family: 'Luxurious Roman', cursive;
 }
