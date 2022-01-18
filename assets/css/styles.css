@@ -26,6 +26,7 @@ body {
 .gameColon,
 .gameChoices {
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 p {
@@ -38,7 +39,6 @@ p {
 }
 
 .correct {
-
   background-color: green;
 }
 
@@ -55,3 +55,18 @@ p {
   margin-top: 30px;
 }
 
+footer {
+  border: 3px solid black;
+  padding-top: 30px;
+}
+
+.disable {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+
+#questionNumber {
+  padding-top: 30px;
+  padding-bottom:  30px;
+}

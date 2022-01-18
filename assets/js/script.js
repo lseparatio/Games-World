@@ -129,7 +129,8 @@ function startGameKids() {
 
 function addNextQuestion() {
 	showQuestion(shuffledQuestions[currentQuestionIndex]);
-	document.getElementById("next-btn").classList.add('hide');
+	document.getElementById("next-btn").classList.add("disable");
+	document.getElementById("next-btn").innerText = "NEXT - Please select an answer.";
 	let questionNumber = 1;
 	questionNumber = ++currentQuestionIndex;
 	let questionLenght = shuffledQuestions.length;
@@ -201,8 +202,6 @@ function showQuestion(question) {
 	});	
 }
 
-
-
 function selectAnswer(e) {
 	const selectedButton = e.target;
 	const correct = selectedButton.dataset.correct;
@@ -211,8 +210,10 @@ function selectAnswer(e) {
 		setStatusClass(button, button.dataset.correct);
 	});
 	if (shuffledQuestions.length > currentQuestionIndex) {
-		document.getElementById('next-btn').classList.remove('hide');
+		document.getElementById('next-btn').classList.remove("disable");
+		document.getElementById("next-btn").innerText = "NEXT QUESTION";
 	} else {
+		document.getElementById("next-btn").classList.add("hide");
 		let chooseTopic = document.getElementById("chooseTopic");
 		chooseTopic.classList.remove("hide");
 		chooseTopic.addEventListener('click', function(){
@@ -256,7 +257,6 @@ let oldScore = parseInt(document.getElementById("wrongAnswers").innerText);
 document.getElementById("wrongAnswers").innerText = ++oldScore;
 }
 
-
 document.addEventListener("click", function() {
 	let buttons = document.getElementsByClassName("answers");
 	for (let button of buttons) {
@@ -271,6 +271,7 @@ document.addEventListener("click", function() {
 		});
 	}
 });
+
 
 
 
