@@ -190,7 +190,8 @@ function showQuestion(question) {
 	question.answers.forEach(answer => {
 		const button = document.createElement('button');
 		button.innerText = answer.text;
-		button.classList.add("btn", "answers", "btn-primary");
+		button.classList.add("btn", "answers");
+		button.type = "button"
 		if (answer.correct) {
 			button.dataset.correct = answer.correct;
 		}
@@ -232,18 +233,14 @@ function selectAnswer(e) {
 function setStatusClass(element, correct) {
 	clearStatusClass(element);
 	if (correct) {
-		element.classList.add('correct');
-		element.disabled = true;
+		element.classList.add("correct", "disable");	
 	} else {
-		element.classList.add('wrong');
-		element.disabled = true;
-		
+		element.classList.add("wrong", "disable");
 	}
 }
 
 function clearStatusClass(element) {
-
-	element.classList.remove('correct');
+    element.classList.remove('correct');
 	element.classList.remove('wrong');
 }
 

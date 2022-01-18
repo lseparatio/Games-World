@@ -41,26 +41,27 @@ p {
 
 .btn {
   font-family: 'Luxurious Roman', cursive;
-  background-color: aquamarine;
+  background-color: rgb(255, 170, 13);
+  color: red;
 }
 
-.btn:focus {
+.btn:focus,
+.btn-primary:visited,
+.btn-primary:active {
   font-family: 'Luxurious Roman', cursive;
-  background-color: aquamarine;
-  box-shadow: 0 0 0 0 red;
-  border-color: brown;
+  outline: none;
+  box-shadow: none;
 
 }
 
-.correct:disabled {
+.correct {
   color: #ffffff;
   background-color: #17fc03;
 }
 
-.wrong:disabled {
+.wrong {
   background-color: #e41111;
   color: #ffffff;
-  box-shadow: none;
 }
 
 .buttonsGrid {
