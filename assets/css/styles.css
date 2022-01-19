@@ -41,18 +41,11 @@ p {
 
 .btn {
   font-family: 'Luxurious Roman', cursive;
-  background-color: rgb(255, 170, 13);
-  color: red;
+  background-color: #FF5F0A;
+  color: #ffffff;
 }
 
-.btn:focus,
-.btn-primary:visited,
-.btn-primary:active {
-  font-family: 'Luxurious Roman', cursive;
-  outline: none;
-  box-shadow: none;
 
-}
 
 .correct {
   color: #ffffff;
@@ -91,4 +84,10 @@ footer {
 
 #gameRow {
   font-family: 'Luxurious Roman', cursive;
+}
+
+a {
+  text-decoration: none;
+  color: #FF5F0A;
+  font-weight: bold;
 }
