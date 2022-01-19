@@ -201,6 +201,7 @@ function showQuestion(question) {
    document.getElementById("next-btn").addEventListener('click', () => {
 		addNextQuestion();
 	});	
+	ceckAnswer();
 }
 
 function selectAnswer(e) {
@@ -254,7 +255,7 @@ let oldScore = parseInt(document.getElementById("wrongAnswers").innerText);
 document.getElementById("wrongAnswers").innerText = ++oldScore;
 }
 
-document.addEventListener("click", function() {
+function ceckAnswer() {
 	let buttons = document.getElementsByClassName("answers");
 	for (let button of buttons) {
 		button.addEventListener("click", function() {
@@ -267,7 +268,7 @@ document.addEventListener("click", function() {
 			}
 		});
 	}
-});
+};
 
 
 
