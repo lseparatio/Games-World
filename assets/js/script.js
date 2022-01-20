@@ -61,7 +61,7 @@ function chooseQuizCategory() {
 	<h5 class="card-title">Geography Quiz</h5>
 	<p class="card-text">30 Quiz Questions</p>
 	<div class="d-grid gap-2">
-  <button id="gameGeography" class="btn" type="button">Play Quiz</button>
+  <button id="gameGeography" class="btn answer-btn" type="button">Play Quiz</button>
 	</div>
 </div>
 </div>
@@ -73,7 +73,7 @@ function chooseQuizCategory() {
 	<h5 class="card-title">Animal Quiz</h5>
 	<p class="card-text">30 Quiz Questions</p>
 	<div class="d-grid gap-2">
-  <button id="gameAnimal" class="btn" type="button">Play Quiz</button>
+  <button id="gameAnimal" class="btn answer-btn" type="button">Play Quiz</button>
 	</div>
 </div>
 </div>
@@ -85,7 +85,7 @@ function chooseQuizCategory() {
 	<h5 class="card-title">Kids Quiz</h5>
 	<p class="card-text">30 Quiz Questions</p>
 	<div class="d-grid gap-2">
-  <button id="gameKids" class="btn" type="button">Play Quiz</button>
+  <button id="gameKids" class="btn answer-btn" type="button">Play Quiz</button>
 	</div>
 </div>
 </div>
