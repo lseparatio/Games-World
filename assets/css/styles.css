@@ -16,7 +16,10 @@ h5 {
 
 body {
   background-color: #183BFF;
-  
+}
+
+.navbar {
+  background-color: #183BFF;
 }
 
 #welcomeTop {
@@ -45,7 +48,9 @@ p {
   color: #ffffff;
 }
 
-
+.card-body {
+  background-color: #183BFF;
+}
 
 .correct {
   color: #ffffff;
@@ -67,15 +72,15 @@ p {
 }
 
 footer {
-  border: 3px solid black;
-  padding-top: 30px;
+  border-top: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  padding-top: 20px;
 }
 
 .disable {
   cursor: not-allowed;
   pointer-events: none;
 }
-
 
 #questionNumber {
   padding-top: 30px;
@@ -86,8 +91,39 @@ footer {
   font-family: 'Luxurious Roman', cursive;
 }
 
-a {
+#github {
   text-decoration: none;
   color: #FF5F0A;
-  font-weight: bold;
 }
+
+#github:hover {
+border: 1px solid white;
+border-radius: 25px;
+background-color: #ffffff;
+color: #183BFF;
+transition-duration: 1s;
+padding-left: 10px;
+padding-right: 10px;
+}
+
+#navbar-brand {
+  font-family: 'Luxurious Roman', cursive;
+  background-color: #FF5F0A;
+  border: 1px solid #FF5F0A;
+  border-radius: 25px;
+  color: #ffffff;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#navbar-brand:hover,
+.btn:hover
+ {
+  font-family: 'Luxurious Roman', cursive;
+  background-color: #FF8A00;
+  color: #ffffff;
+  transition-duration: 1s;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
