@@ -103,6 +103,10 @@ footer {
   padding-right: 10px;
 }
 
+.btn:hover{
+  color: #ffffff;
+}
+
 #navbar-brand:hover,
 #github:hover,
 .answer-btn:hover,
