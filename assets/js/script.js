@@ -1,13 +1,18 @@
 document.getElementById("inputName").focus();
 
 document.getElementById("inputName").addEventListener("keydown", function(event) {
-	if (event.key === "Enter") {
+let haveNumbers = /\d+/g;
+		if (event.key === "Enter") {
 		localStorage.setItem("userName", document.getElementById("inputName").value);
 		let userName = localStorage.getItem("userName");
 		if (userName === "") {
 			changeTopTextNoUsername();
 			document.getElementById("tellMeYourName").innerHTML =
 				`I am not allowed to play with strangers so please tell me your name!`;
+		} else if (userName.match(haveNumbers)){
+			changeTopTextNoUsername();
+			document.getElementById("tellMeYourName").innerHTML =
+				`Your name contain numbers, are you a robot like me? If not please tell me your name.`;
 		} else {
 			changeTopText(userName);
 			chooseQuizCategory();
@@ -18,10 +23,15 @@ document.getElementById("inputName").addEventListener("keydown", function(event)
 document.getElementById("submitButton").addEventListener("click", function() {
 	localStorage.setItem("userName", document.getElementById("inputName").value);
 	let userName = localStorage.getItem("userName");
+	let haveNumbers = /\d+/g;
 	if (userName === "") {
 		changeTopTextNoUsername();
 		document.getElementById("tellMeYourName").innerHTML =
 			`I am not allowed to play with strangers so please tell me your name!`;
+	} else if (userName.match(haveNumbers)){
+		changeTopTextNoUsername();
+		document.getElementById("tellMeYourName").innerHTML =
+			`Your name contain numbers, are you a robot like me? If not please tell me your name.`;
 	} else {
 		changeTopText(userName);
 		chooseQuizCategory();
@@ -138,7 +148,6 @@ function addNextQuestion() {
 	`<h4 id="questionCounter">Question nr: ${questionNumber} from ${questionLenght} questions.</h3>`;
 	}
 
-
 	function changeTopTextQuizScreen() {
 		let userName = localStorage.getItem("userName");
 		document.getElementById (
@@ -229,7 +238,6 @@ function selectAnswer(e) {
 		});
 	}
 }
-
 
 function setStatusClass(element, correct) {
 	clearStatusClass(element);
