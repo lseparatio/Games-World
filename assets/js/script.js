@@ -245,26 +245,18 @@ function clearStatusClass(element) {
 	element.classList.remove('wrong');
 }
 
-function incrementScore() {
-let oldScore = parseInt(document.getElementById("correctAnswers").innerText);
-	document.getElementById("correctAnswers").innerText = ++oldScore;
-}
-
-function incrementWrongAnswer() {
-let oldScore = parseInt(document.getElementById("wrongAnswers").innerText);
-document.getElementById("wrongAnswers").innerText = ++oldScore;
-}
-
 function ceckAnswer() {
 	let buttons = document.getElementsByClassName("answers");
 	for (let button of buttons) {
 		button.addEventListener("click", function() {
 			if (this.getAttribute("data-correct") === "true") {
 				console.log("Correct Answer");
-				incrementScore();
+				let oldScore = parseInt(document.getElementById("correctAnswers").innerText);
+	            document.getElementById("correctAnswers").innerText = ++oldScore;
 			} else {
 				console.log("Incorrect Answer");
-				incrementWrongAnswer();
+				let oldScore = parseInt(document.getElementById("wrongAnswers").innerText);
+                document.getElementById("wrongAnswers").innerText = ++oldScore;
 			}
 		});
 	}
