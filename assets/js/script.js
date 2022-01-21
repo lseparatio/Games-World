@@ -1,7 +1,8 @@
+/*jshint esversion: 6 */
 document.getElementById("inputName").focus();
 
 document.getElementById("inputName").addEventListener("keydown", function(event) {
-let haveNumbers = /\d+/g;
+let invalidCaracters = /^[A-Za-z]+$/;
 		if (event.key === "Enter") {
 		localStorage.setItem("userName", document.getElementById("inputName").value);
 		let userName = localStorage.getItem("userName");
@@ -9,13 +10,13 @@ let haveNumbers = /\d+/g;
 			changeTopTextNoUsername();
 			document.getElementById("tellMeYourName").innerHTML =
 				`I am not allowed to play with strangers so please tell me your name!`;
-		} else if (userName.match(haveNumbers)){
-			changeTopTextNoUsername();
-			document.getElementById("tellMeYourName").innerHTML =
-				`Your name contain numbers, are you a robot like me? If not please tell me your name.`;
-		} else {
-			changeTopText(userName);
+		} else if (userName.match(invalidCaracters)){
+      changeTopText(userName);
 			chooseQuizCategory();
+			} else {
+      changeTopTextNoUsername();
+			document.getElementById("tellMeYourName").innerHTML =
+				`Your name contain numbers or another caracters, are you a robot like me? If not please tell me your name.`;
 		}
 	}
 });
@@ -23,19 +24,19 @@ let haveNumbers = /\d+/g;
 document.getElementById("submitButton").addEventListener("click", function() {
 	localStorage.setItem("userName", document.getElementById("inputName").value);
 	let userName = localStorage.getItem("userName");
-	let haveNumbers = /\d+/g;
+	let invalidCaracters = /^[A-Za-z]+$/;
 	if (userName === "") {
 		changeTopTextNoUsername();
 		document.getElementById("tellMeYourName").innerHTML =
 			`I am not allowed to play with strangers so please tell me your name!`;
-	} else if (userName.match(haveNumbers)){
-		changeTopTextNoUsername();
-		document.getElementById("tellMeYourName").innerHTML =
-			`Your name contain numbers, are you a robot like me? If not please tell me your name.`;
-	} else {
-		changeTopText(userName);
-		chooseQuizCategory();
-	}
+		} else if (userName.match(invalidCaracters)){
+      changeTopText(userName);
+			chooseQuizCategory();
+			} else {
+      changeTopTextNoUsername();
+			document.getElementById("tellMeYourName").innerHTML =
+				`Your name contain numbers or another caracters, are you a robot like me? If not please tell me your name.`;
+		}
 });
 
 function changeTopTextNoUsername() {
@@ -55,7 +56,7 @@ function changeTopTextOnReturn() {
 	).innerHTML = `<h1>Wellcome back <span id="userName">${userName}</span>!</h1>`;
 }
 
-/* *
+/**
  *Function to show bootstrap cards with images and
  *  to be able to choose one category.
  */
@@ -200,7 +201,7 @@ function showQuestion(question) {
 		const button = document.createElement('button');
 		button.innerText = answer.text;
 		button.classList.add("btn", "answers");
-		button.type = "button"
+		button.type = "button";
 		if (answer.correct) {
 			button.dataset.correct = answer.correct;
 		}
@@ -260,15 +261,15 @@ function ceckAnswer() {
 			if (this.getAttribute("data-correct") === "true") {
 				console.log("Correct Answer");
 				let oldScore = parseInt(document.getElementById("correctAnswers").innerText);
-	            document.getElementById("correctAnswers").innerText = ++oldScore;
+	      document.getElementById("correctAnswers").innerText = ++oldScore;
 			} else {
 				console.log("Incorrect Answer");
 				let oldScore = parseInt(document.getElementById("wrongAnswers").innerText);
-                document.getElementById("wrongAnswers").innerText = ++oldScore;
+        document.getElementById("wrongAnswers").innerText = ++oldScore;
 			}
 		});
 	}
-};
+}
 
 
 
