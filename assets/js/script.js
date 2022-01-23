@@ -1,7 +1,11 @@
 /*jshint esversion: 6 */
+let shuffledQuestions = "";
+let currentQuestionIndex = "";
+
 document.getElementById("inputName").focus();
 
 document.getElementById("inputName").addEventListener("keydown", function(event) {
+  "use strict";
 let invalidCaracters = /^[A-Za-z]+$/;
 		if (event.key === "Enter") {
 		localStorage.setItem("userName", document.getElementById("inputName").value);
@@ -22,6 +26,7 @@ let invalidCaracters = /^[A-Za-z]+$/;
 });
 
 document.getElementById("submitButton").addEventListener("click", function() {
+  "use strict";
 	localStorage.setItem("userName", document.getElementById("inputName").value);
 	let userName = localStorage.getItem("userName");
 	let invalidCaracters = /^[A-Za-z]+$/;
@@ -40,16 +45,19 @@ document.getElementById("submitButton").addEventListener("click", function() {
 });
 
 function changeTopTextNoUsername() {
+  "use strict";
 	document.getElementById("welcomeMiddle").innerHTML = `<h1>Sorry!!</h1>`;
 }
 
 function changeTopText(userName) {
+  "use strict";
 	document.getElementById(
 		"welcomeTop"
 	).innerHTML = `<h1>Nice to meet you  <span id="userName">${userName}</span>!</h1>`;
 }
 
 function changeTopTextOnReturn() {
+        "use strict";
 	let userName = localStorage.getItem("userName");
 	document.getElementById(
 		"welcomeTop"
@@ -61,6 +69,7 @@ function changeTopTextOnReturn() {
  *  to be able to choose one category.
  */
 function chooseQuizCategory() {
+        "use strict";
 	document.getElementById("welcomeMiddle").innerHTML =
 		`<h2>Do you think that you are ready to test your knowledge? Choose a category!</h2>`;
 	document.getElementById("gameContainer").innerHTML = `
@@ -109,6 +118,7 @@ function chooseQuizCategory() {
 }
 
 function startGameGeography() {
+        "use strict";
 	document.getElementById("gameGeography").addEventListener("click", function() {
 		changeTopTextQuizScreen();
 		addPointsToGameScreen();
@@ -119,6 +129,7 @@ function startGameGeography() {
 }
 
 function startGameAnimal() {
+        "use strict";
 	document.getElementById("gameAnimal").addEventListener("click", function() {
 		changeTopTextQuizScreen();
 		addPointsToGameScreen();
@@ -129,6 +140,7 @@ function startGameAnimal() {
 }
 
 function startGameKids() {
+        "use strict";
 	document.getElementById("gameKids").addEventListener("click", function() {
 		changeTopTextQuizScreen();
 		addPointsToGameScreen();
@@ -139,6 +151,7 @@ function startGameKids() {
 }
 
 function addNextQuestion() {
+        "use strict";
 	showQuestion(shuffledQuestions[currentQuestionIndex]);
 	document.getElementById("next-btn").classList.add("disable");
 	document.getElementById("next-btn").innerText = "NEXT - Please select an answer.";
@@ -150,6 +163,7 @@ function addNextQuestion() {
 	}
 
 	function changeTopTextQuizScreen() {
+    "use strict";
 		let userName = localStorage.getItem("userName");
 		document.getElementById (
 			"welcomeTop"
@@ -157,6 +171,7 @@ function addNextQuestion() {
 	}
 
 function addPointsToGameScreen() {
+  "use strict";
 	document.getElementById("welcomeMiddle").innerHTML =
 		`
 		<div class="container">
@@ -173,6 +188,7 @@ function addPointsToGameScreen() {
 }
 
 function showQuestion(question) {
+  "use strict";
 	document.getElementById("gameContainer").innerHTML =
 		`
 		<div class="container">
@@ -214,10 +230,8 @@ function showQuestion(question) {
 	ceckAnswer();
 }
 
-function selectAnswer(e) {
-	const selectedButton = e.target;
-	const correct = selectedButton.dataset.correct;
-	
+function selectAnswer() {
+     "use strict";
 	Array.from(document.getElementById("answer-buttons").children).forEach(button => {
 		setStatusClass(button, button.dataset.correct);
 	});
@@ -241,6 +255,7 @@ function selectAnswer(e) {
 }
 
 function setStatusClass(element, correct) {
+     "use strict";
 	clearStatusClass(element);
 	if (correct) {
 		element.classList.add("correct", "disable");	
@@ -250,11 +265,13 @@ function setStatusClass(element, correct) {
 }
 
 function clearStatusClass(element) {
+     "use strict";
     element.classList.remove('correct');
 	element.classList.remove('wrong');
 }
 
 function ceckAnswer() {
+     "use strict";
 	let buttons = document.getElementsByClassName("answers");
 	for (let button of buttons) {
 		button.addEventListener("click", function() {
