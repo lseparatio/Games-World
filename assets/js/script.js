@@ -397,6 +397,110 @@ answers: [
 { text: "2", correct: false}
 ]
 },
+{ question: "Tasmania is separated from mainland Australia by which strait?",
+	answers: [
+		{ text: "Bass Straight", correct: true }, 
+		{ text: "Krab Straight", correct: false }, 
+		{ text: "Colonial Straight", correct: false }, 
+		{ text: "Deads Straight", correct: false }
+	 ]
+},
+ {
+	question: "How many stars were on the US flag in 1940?",
+	answers: [
+		{ text: "29 Stars", correct: false }, 
+		{ text: "50 Stars", correct: false }, 
+		{ text: "48 Stars", correct: true }, 
+		{ text: "51 Stars", correct: false }
+	 ]
+}, 
+{
+	question: "Name the second-largest island in the Mediterranean Sea?",
+	answers: [
+		{ text: "Sicily", correct: false }, 
+	  {	text: "Cyprus", correct: false }, 
+		{ text: "Corsica", correct: false }, 
+		{ text: "Sardinia", correct: true}
+	]
+},
+{ question: "Aconcagua, the highest mountain in the Americas and the Andes is in which country?",
+answers: [
+	{ text: "Patagonia", correct: false }, 
+	{ text: "Argentina", correct: true }, 
+	{ text: "Mesopotamia", correct: false }, 
+	{ text: "Gran Chaco", correct: false }
+ ]
+},
+{
+question: "Three African countries have a population of over 100 million, can you name them?",
+answers: [
+	{ text: "Ethiopia, South Africa, Algeria", correct: false }, 
+	{ text: "Nigeria, Ethiopia, Egypt", correct: true }, 
+	{ text: "Ethiopia, South Africa, Egypt", correct: false }, 
+	{ text: "Ethiopia, South Africa, Mozambique", correct: false }
+ ]
+}, 
+{
+question: "What name is given to the area of about 40,000 interlocking basalt columns in Northern Ireland?",
+answers: [
+	{ text: "The Giants Walkway", correct: false }, 
+	{	text: "The Giants Causeway", correct: true }, 
+	{ text: "The Giants Driveway", correct: false }, 
+	{ text: "The Giants Stepway", correct: false}
+]
+},
+{ question: "Which city has more French speakers than Paris?",
+answers: [
+	{ text: "Kinshasa", correct: true }, 
+	{ text: "Brazzaville", correct: false }, 
+	{ text: "Buantaba", correct: false }, 
+	{ text: "Sona Bata", correct: false }
+ ]
+},
+{
+question: "The Aegean Sea is located between which two countries?",
+answers: [
+	{ text: "Greece and Italy", correct: false }, 
+	{ text: "Greece and Albania", correct: false }, 
+	{ text: "Greece and Turkey", correct: true }, 
+	{ text: "Greece and Cyprus", correct: false }
+ ]
+}, 
+{
+question: "Which country is made up of 26 cantons?",
+answers: [
+	{ text: "Netherlands", correct: false }, 
+	{	text: "Austria", correct: false }, 
+	{ text: "Sweden", correct: false }, 
+	{ text: "Switzerland", correct: true}
+]
+},
+{ question: "The River Tamar forms most of the border between which two counties?",
+answers: [
+{ text: "Tauton and Cornwall", correct: false }, 
+{ text: "Devon and Cornwall", correct: true }, 
+{ text: "Exeter and Devon", correct: false }, 
+{ text: "Devon and Plymouth", correct: false }
+]
+},
+{
+question: "Can you name the northernmost town on the British mainland?",
+answers: [
+{ text: "Leeds", correct: false }, 
+{ text: "Newcastle Upon Tyne", correct: false }, 
+{ text: "Carlisle", correct: false }, 
+{ text: "Thurso", correct: true }
+]
+}, 
+{
+question: "Cape Cod is a geographic cape and peninsula in which American state?",
+answers: [
+{ text: "Virginia", correct: false }, 
+{	text: "Massachusetts", correct: true }, 
+{ text: "Georgia", correct: false }, 
+{ text: "Arizona", correct: false}
+]
+},
  ];
 
  const questionsAnimal = [
