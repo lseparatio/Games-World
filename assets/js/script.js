@@ -605,6 +605,58 @@ answers: [
 	{ text: "Apes", correct: true}
 ]
 },
+{ question: "The biggest fish in the ocean is the Rhincodon typus, by what name do we know this fish?",
+	answers: [
+		{ text: "Whale shark", correct: true }, 
+		{ text: "Gray Whale", correct: false }, 
+		{ text: "Blue Whale", correct: false }, 
+		{ text: "Bowhead Whale", correct: false }
+	 ]
+},
+ {
+	question: "Which plant makes up more than 99% of a panda diet?",
+	answers: [
+		{ text: "Small animals", correct: false }, 
+		{ text: "Fish", correct: false }, 
+		{ text: "Bamboo", correct: true }, 
+		{ text: "Other vegetation", correct: false }
+	 ]
+}, 
+{
+	question: "Which animals are known as the 'big five' in Africa?",
+	answers: [
+		{ text: "Lion, Leopard, Rhino, Hyena and African Buffalo", correct: false }, 
+	  {	text: "Lion, Leopard, Rhino, Elephant and African Buffalo", correct: true }, 
+		{ text: "Lion, Leopard, Rhino, Giraffe and African Buffalo", correct: false }, 
+		{ text: "Lion, Leopard, Rhino, Tigers and African Buffalo", correct: false}
+	]
+},
+{ question: "The most powerful bite recorded from a living animal belongs to which animal?",
+answers: [
+	{ text: "Grizzly Bear", correct: false }, 
+	{ text: "Saltwater Crocodile", correct: true }, 
+	{ text: "Hyena", correct: false },
+  { text: "Gorilla", correct: false }
+ ]
+},
+{
+question: "Lemurs are mammals that are native to only one country, which country?",
+answers: [
+	{ text: "Madagascar", correct: true }, 
+	{ text: "Mozambique", correct: false }, 
+	{ text: "Zimbabwe", correct: false }, 
+	{ text: "Malawi", correct: false }
+ ]
+}, 
+{
+question: "What animals are often known as spiny anteaters?",
+answers: [
+	{ text: "Hedgehogs", correct: false }, 
+	{ text: "Echidnas", correct: true},
+  { text: "Porcupine", correct: false },
+  { text: "Pufferfish", correct: false }
+]
+},
  ];
 
 
