@@ -57,6 +57,14 @@ p {
   background-color: #17fc03;
 }
 
+.correctText {
+  color: #17fc03;
+}
+
+.wrongText {
+  color: #e41111;
+}
+
 .wrong {
   background-color: #e41111;
   color: #ffffff;

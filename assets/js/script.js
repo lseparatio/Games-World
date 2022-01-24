@@ -202,8 +202,6 @@ function showQuestion(question) {
  </div>
  <div class="d-grid gap-2 col-12 mx-auto">
   <button id="next-btn" class="btn btn-primary" type="button">Next</button>
-	<button id="finish-btn" class="btn btn-primary hide" type="button">Go To Main Screen</button>
-	<button id="chooseTopic" class="btn btn-primary hide" type="button">Choose another Topic</button>
 	</div>
 	<div class="container">
 		<div class="row">
@@ -239,18 +237,8 @@ function selectAnswer() {
 		document.getElementById('next-btn').classList.remove("disable");
 		document.getElementById("next-btn").innerText = "NEXT QUESTION";
 	} else {
+    lastScreen();
 		document.getElementById("next-btn").classList.add("hide");
-		let chooseTopic = document.getElementById("chooseTopic");
-		chooseTopic.classList.remove("hide");
-		chooseTopic.addEventListener('click', function(){
-			changeTopTextOnReturn();
-			chooseQuizCategory();
-		});
-    let goToMainScreen = document.getElementById("finish-btn");
-		goToMainScreen.classList.remove("hide");
-		goToMainScreen.addEventListener("click", function(){
-			window.location.reload();
-		});
 	}
 }
 
@@ -275,17 +263,70 @@ function ceckAnswer() {
 	let buttons = document.getElementsByClassName("answers");
 	for (let button of buttons) {
 		button.addEventListener("click", function() {
-			if (this.getAttribute("data-correct") === "true") {
-				console.log("Correct Answer");
+			if (this.getAttribute("data-correct") === "true") {				
 				let oldScore = parseInt(document.getElementById("correctAnswers").innerText);
 	      document.getElementById("correctAnswers").innerText = ++oldScore;
-			} else {
-				console.log("Incorrect Answer");
+			} else {				
 				let oldScore = parseInt(document.getElementById("wrongAnswers").innerText);
         document.getElementById("wrongAnswers").innerText = ++oldScore;
 			}
 		});
 	}
+}
+
+function lastScreen(){
+  setTimeout(function(){
+  let finalCorrectScore = parseInt(document.getElementById("correctAnswers").innerText);
+  console.log(finalCorrectScore);
+  let finalWrongScore = parseInt(document.getElementById("wrongAnswers").innerText);
+  console.log(finalWrongScore);
+  let userName = localStorage.getItem("userName");
+  if (finalCorrectScore > finalWrongScore) {
+    document.getElementById("welcomeTop").innerHTML = 
+    `<h1>Congratulations ${userName}!</h1>`;
+  } else if(finalCorrectScore == finalWrongScore) {
+    document.getElementById("welcomeTop").innerHTML = 
+    `<h1>You can do better ${userName}!</h1>`;
+} else {
+    document.getElementById("welcomeTop").innerHTML = 
+    `<h1>Best luck next time ${userName}!</h1>`;
+}
+document.getElementById (
+  "welcomeMiddle"
+).innerHTML = `<h2>Your results are:</h2>`;
+document.getElementById (
+  "gameContainer"
+).innerHTML = `
+<div class="container">
+<div id="score" class="row">
+ <div class="col-md-6">
+  <h3 class="correctText">Your correct answers: <span id="correctAnswers">${finalCorrectScore}</span></h3>
+ </div>
+ <div class="col-md-6">
+  <h3 class="wrongText">Wrong Answers: <span id="wrongAnswers">${finalWrongScore}</span></h3>
+ </div>
+</div>
+</div>
+<div class="container">
+<div class="row">
+<h4>Please choose what you will like to do next:</h4>
+</div>
+</div>
+
+<div class="d-grid gap-2 col-12 mx-auto">
+<button id="finish-btn" class="btn btn-primary" type="button">Go To Main Screen</button>
+<button id="chooseTopic" class="btn btn-primary" type="button">Choose another Topic</button>
+</div>`;
+let chooseTopic = document.getElementById("chooseTopic");
+chooseTopic.addEventListener('click', function(){
+  changeTopTextOnReturn();
+  chooseQuizCategory();
+});
+let goToMainScreen = document.getElementById("finish-btn");
+goToMainScreen.addEventListener("click", function(){
+  window.location.reload();
+});
+}, 1000);
 }
 
 
