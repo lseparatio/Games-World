@@ -501,6 +501,58 @@ answers: [
 { text: "Arizona", correct: false}
 ]
 },
+{ question: "The Danube flows through four capital cities, can you name all four?",
+answers: [
+	{ text: "Vienna, Bratislava, Budapest and Belgrade", correct: true }, 
+	{ text: "Roma, Bratislava, Budapest and Belgrade", correct: false }, 
+	{ text: "Roma, Bratislava, Madrid and Belgrade", correct: false }, 
+	{ text: "Sofia, Bratislava, Madrid and Belgrade", correct: false }
+ ]
+},
+{
+question: "Name the third most populated U.S. state?",
+answers: [
+	{ text: "Texas", correct: false }, 
+	{ text: "California", correct: false }, 
+	{ text: "Florida", correct: true }, 
+	{ text: "Maryland", correct: false }
+ ]
+}, 
+{
+question: "In geography, a cataract is a type of what?",
+answers: [
+	{ text: "Sea", correct: false }, 
+	{	text: "Rover", correct: false }, 
+	{ text: "Pond", correct: false }, 
+	{ text: "Waterfall", correct: true}
+]
+},
+{ question: "Name the largest and most-populated island of the eight Canary Islands?",
+answers: [
+{ text: "Gran Canaria", correct: false }, 
+{ text: "Tenerife", correct: true }, 
+{ text: "Lanzarote", correct: false }, 
+{ text: "El Hierro", correct: false }
+]
+},
+{
+question: "Cordoba, Rosario, and Ushuaia are cities in which country?",
+answers: [
+{ text: "Paraguay", correct: false }, 
+{ text: "Uruguay", correct: false }, 
+{ text: "Chile", correct: false }, 
+{ text: "Argentina", correct: true }
+]
+}, 
+{
+question: "Which country has the highest population out of Albania, Malta, Slovenia, and Wales?",
+answers: [
+{ text: "Albania", correct: false }, 
+{	text: "Wales", correct: true }, 
+{ text: "Malta", correct: false }, 
+{ text: "Slovenia", correct: false}
+]
+}
  ];
 
  const questionsAnimal = [
@@ -513,7 +565,7 @@ answers: [
 	 ]
 },
  {
-	question: "What are rhino’s horns made from?",
+	question: "What are rhino horns made from?",
 	answers: [
 		{ text: "Cambodia", correct: false }, 
 		{ text: "Bone", correct: false }, 
