@@ -12,47 +12,47 @@ let invalidCaracters = /^[A-Za-z]+$/;
 		let userName = localStorage.getItem("userName");
 		if (userName === "") {
 			changeTopTextNoUsername();
-			document.getElementById("tellMeYourName").innerHTML =
+			document.getElementById("tell-me-your-name").innerHTML =
 				`I am not allowed to play with strangers so please tell me your name!`;
 		} else if (userName.match(invalidCaracters)){
       changeTopText(userName);
 			chooseQuizCategory();
 			} else {
       changeTopTextNoUsername();
-			document.getElementById("tellMeYourName").innerHTML =
+			document.getElementById("tell-me-your-name").innerHTML =
 				`Your name contain numbers or another caracters, are you a robot like me? If not please tell me your name.`;
 		}
 	}
 });
 
-document.getElementById("submitButton").addEventListener("click", function() {
+document.getElementById("submit-button").addEventListener("click", function() {
   "use strict";
 	localStorage.setItem("userName", document.getElementById("inputName").value);
 	let userName = localStorage.getItem("userName");
 	let invalidCaracters = /^[A-Za-z]+$/;
 	if (userName === "") {
 		changeTopTextNoUsername();
-		document.getElementById("tellMeYourName").innerHTML =
+		document.getElementById("tell-me-your-name").innerHTML =
 			`I am not allowed to play with strangers so please tell me your name!`;
 		} else if (userName.match(invalidCaracters)){
       changeTopText(userName);
 			chooseQuizCategory();
 			} else {
       changeTopTextNoUsername();
-			document.getElementById("tellMeYourName").innerHTML =
+			document.getElementById("tell-me-your-name").innerHTML =
 				`Your name contain numbers or another caracters, are you a robot like me? If not please tell me your name.`;
 		}
 });
 
 function changeTopTextNoUsername() {
   "use strict";
-	document.getElementById("welcomeMiddle").innerHTML = `<h1>Sorry!!</h1>`;
+	document.getElementById("welcome-middle").innerHTML = `<h1>Sorry!!</h1>`;
 }
 
 function changeTopText(userName) {
   "use strict";
 	document.getElementById(
-		"welcomeTop"
+		"welcome-top"
 	).innerHTML = `<h1>Nice to meet you  <span id="userName">${userName}</span>!</h1>`;
 }
 
@@ -60,7 +60,7 @@ function changeTopTextOnReturn() {
         "use strict";
 	let userName = localStorage.getItem("userName");
 	document.getElementById(
-		"welcomeTop"
+		"welcome-top"
 	).innerHTML = `<h1>Wellcome back <span id="userName">${userName}</span>!</h1>`;
 }
 
@@ -70,11 +70,11 @@ function changeTopTextOnReturn() {
  */
 function chooseQuizCategory() {
         "use strict";
-	document.getElementById("welcomeMiddle").innerHTML =
+	document.getElementById("welcome-middle").innerHTML =
 		`<h2>Do you think that you are ready to test your knowledge? Choose a category!</h2>`;
-	document.getElementById("gameContainer").innerHTML = `
+	document.getElementById("game-container").innerHTML = `
 	<div class="row" id="game">
-<div class="col d-flex justify-content-center gameGeography gameChoices">
+<div class="col d-flex justify-content-center gameGeography game-choices">
 <div class="card" style="width: 18rem;">
 <img src="assets/img/globe.jpg" class="card-img-top" alt="World Globe.">
 <div class="card-body">
@@ -86,7 +86,7 @@ function chooseQuizCategory() {
 </div>
 </div>
 </div>
-<div class="col d-flex justify-content-center gameAnimal gameChoices">
+<div class="col d-flex justify-content-center gameAnimal game-choices">
 <div class="card" style="width: 18rem;">
 <img src="assets/img/cat.jpg" class="card-img-top" alt="Cat resting on keyboard.">
 <div class="card-body">
@@ -98,7 +98,7 @@ function chooseQuizCategory() {
 </div>
 </div>
 </div>
-<div class="col d-flex justify-content-center gameKids gameChoices">
+<div class="col d-flex justify-content-center gameKids game-choices">
 <div class="card" style="width: 18rem;">
 <img src="assets/img/kids.jpg" class="card-img-top" alt="Kids Game">
 <div class="card-body">
@@ -158,7 +158,7 @@ function addNextQuestion() {
 	let questionNumber = 1;
 	questionNumber = ++currentQuestionIndex;
 	let questionLenght = shuffledQuestions.length;
-	document.getElementById("questionNumber").innerHTML =
+	document.getElementById("question-number").innerHTML =
 	`<h4 id="questionCounter">Question nr: ${questionNumber} from ${questionLenght} questions.</h3>`;
 	}
 
@@ -166,13 +166,13 @@ function addNextQuestion() {
     "use strict";
 		let userName = localStorage.getItem("userName");
 		document.getElementById (
-			"welcomeTop"
+			"welcome-top"
 		).innerHTML = `<h1>I wish you luck ${userName}!</h1>`;
 	}
 
 function addPointsToGameScreen() {
   "use strict";
-	document.getElementById("welcomeMiddle").innerHTML =
+	document.getElementById("welcome-middle").innerHTML =
 		`
 		<div class="container">
 		 <div id="score" class="row">
@@ -189,7 +189,7 @@ function addPointsToGameScreen() {
 
 function showQuestion(question) {
   "use strict";
-	document.getElementById("gameContainer").innerHTML =
+	document.getElementById("game-container").innerHTML =
 		`
 		<div class="container">
 		<div class="row">
@@ -198,14 +198,14 @@ function showQuestion(question) {
 		 </div>
 		</div>
 	 </div>
-	 <div id="answer-buttons" class="d-grid gap-2 col-12 mx-auto buttonsGrid">
+	 <div id="answer-buttons" class="d-grid gap-2 col-12 mx-auto buttons-grid">
  </div>
  <div class="d-grid gap-2 col-12 mx-auto">
   <button id="next-btn" class="btn btn-primary" type="button">Next</button>
 	</div>
 	<div class="container">
 		<div class="row">
-		 <div id="questionNumber" class="col-md-12">
+		 <div id="question-number" class="col-md-12">
 		 </div>
 		</div>
 	 </div>
@@ -277,47 +277,45 @@ function ceckAnswer() {
 function lastScreen(){
   setTimeout(function(){
   let finalCorrectScore = parseInt(document.getElementById("correctAnswers").innerText);
-  console.log(finalCorrectScore);
   let finalWrongScore = parseInt(document.getElementById("wrongAnswers").innerText);
-  console.log(finalWrongScore);
   let userName = localStorage.getItem("userName");
   if (finalCorrectScore > finalWrongScore) {
-    document.getElementById("welcomeTop").innerHTML = 
+    document.getElementById("welcome-top").innerHTML = 
     `<h1>Congratulations ${userName}!</h1>`;
   } else if(finalCorrectScore == finalWrongScore) {
-    document.getElementById("welcomeTop").innerHTML = 
+    document.getElementById("welcome-top").innerHTML = 
     `<h1>You can do better ${userName}!</h1>`;
 } else {
-    document.getElementById("welcomeTop").innerHTML = 
+    document.getElementById("welcome-top").innerHTML = 
     `<h1>Best luck next time ${userName}!</h1>`;
 }
 document.getElementById (
-  "welcomeMiddle"
+  "welcome-middle"
 ).innerHTML = `<h2>Your results are:</h2>`;
 document.getElementById (
-  "gameContainer"
+  "game-container"
 ).innerHTML = `
 <div class="container">
 <div id="score" class="row">
  <div class="col-md-6">
-  <h3 class="correctText">Your correct answers: <span id="correctAnswers">${finalCorrectScore}</span></h3>
+  <h3 class="correct-text">Your correct answers: <span id="correct-answers">${finalCorrectScore}</span></h3>
  </div>
  <div class="col-md-6">
-  <h3 class="wrongText">Wrong Answers: <span id="wrongAnswers">${finalWrongScore}</span></h3>
+  <h3 class="wrong-text">Wrong Answers: <span id="wrong-answers">${finalWrongScore}</span></h3>
  </div>
 </div>
 </div>
 <div class="container">
-<div class="row">
+<div class="row what-next">
 <h4>Please choose what you will like to do next:</h4>
 </div>
 </div>
 
 <div class="d-grid gap-2 col-12 mx-auto">
 <button id="finish-btn" class="btn btn-primary" type="button">Go To Main Screen</button>
-<button id="chooseTopic" class="btn btn-primary" type="button">Choose another Topic</button>
+<button id="choose-topic" class="btn btn-primary" type="button">Choose another Topic</button>
 </div>`;
-let chooseTopic = document.getElementById("chooseTopic");
+let chooseTopic = document.getElementById("choose-topic");
 chooseTopic.addEventListener('click', function(){
   changeTopTextOnReturn();
   chooseQuizCategory();

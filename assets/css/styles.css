@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Luxurious+Roman&display=swap");
 
 h1,
 h2,
 h3,
 h4,
 h5 {
-  font-family: 'Luxurious Roman', cursive;
+  font-family: "Luxurious Roman", cursive;
   text-align: center;
   color: #ffffff;
 }
@@ -15,41 +15,45 @@ h5 {
 }
 
 body {
-  background-color: #183BFF;
+  background-color: #183bff;
 }
 
 .navbar {
-  background-color: #183BFF;
+  background-color: #183bff;
 }
 
-#welcomeTop {
+#welcome-top {
   padding-top: 20px;
 }
 
-#presentationRow {
+#welcome-middle {
+  padding-bottom: 30px;
+}
+
+#presentation-row {
   padding-top: 20px;
 }
 
-.gameColon,
-.gameChoices {
+.game-colon,
+.game-choices {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
 p {
-  font-family: 'Luxurious Roman', cursive;
+  font-family: "Luxurious Roman", cursive;
   text-align: center;
   color: #ffffff;
 }
 
 .btn {
-  font-family: 'Luxurious Roman', cursive;
-  background-color: #FF5F0A;
+  font-family: "Luxurious Roman", cursive;
+  background-color: #ff5f0a;
   color: #ffffff;
 }
 
 .card-body {
-  background-color: #183BFF;
+  background-color: #183bff;
 }
 
 .correct {
@@ -57,12 +61,14 @@ p {
   background-color: #17fc03;
 }
 
-.correctText {
-  color: #17fc03;
+.correct-text {
+  background-color: #17fc03;
+  color: #ffffff;
 }
 
-.wrongText {
-  color: #e41111;
+.wrong-text {
+  background-color: #e41111;
+  color: #ffffff;
 }
 
 .wrong {
@@ -70,13 +76,17 @@ p {
   color: #ffffff;
 }
 
-.buttonsGrid {
+.buttons-grid {
   margin-top: 30px;
 }
 
 #next-btn,
 #finish-btn {
   margin-top: 30px;
+}
+
+.what-next {
+  padding-top: 30px;
 }
 
 footer {
@@ -90,48 +100,50 @@ footer {
   pointer-events: none;
 }
 
-#questionNumber {
+#question-number {
   padding-top: 30px;
-  padding-bottom:  30px;
+  padding-bottom: 30px;
 }
 
-#gameRow {
-  font-family: 'Luxurious Roman', cursive;
+#game-row {
+  font-family: "Luxurious Roman", cursive;
 }
 
 #navbar-brand,
 #github {
-  font-family: 'Luxurious Roman', cursive;
+  font-family: "Luxurious Roman", cursive;
   text-decoration: none;
-  background-color: #FF5F0A;
-  border: 1px solid #FF5F0A;
+  background-color: #ff5f0a;
+  border: 1px solid #ff5f0a;
   border-radius: 25px;
   color: #ffffff;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.btn:hover{
+.btn:hover {
   color: #ffffff;
 }
 
 #navbar-brand:hover,
 #github:hover,
 .answer-btn:hover,
-#submitButton:hover,
+#submit-button:hover,
 #next-btn,
 #finish-btn,
-#chooseTopic {
-  font-family: 'Luxurious Roman', cursive;
-  background-color: #FF8A00;
+#choose-topic {
+  font-family: "Luxurious Roman", cursive;
+  background-color: #ff8a00;
   color: #ffffff;
   transition-duration: 1s;
   padding-left: 15px;
   padding-right: 15px;
 }
 
+#choose-topic {
+  margin-bottom: 30px;
+}
 
 .navbar .navbar-collapse {
   text-align: center;
 }
-
