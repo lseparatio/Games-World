@@ -696,6 +696,160 @@ answers: [
   { text: "Pufferfish", correct: false }
 ]
 },
+{ question: "Which animals are the largest arboreal animals in the world?",
+	answers: [
+		{ text: "Orangutans", correct: true }, 
+		{ text: "Gorillas", correct: false }, 
+		{ text: "Chimpanzee", correct: false }, 
+		{ text: "Bonobo", correct: false }
+	 ]
+},
+ {
+	question: "Name the only birds that can fly backwards and upside down?",
+	answers: [
+		{ text: "Birds-of-paradise", correct: false }, 
+		{ text: "Black tern", correct: false }, 
+		{ text: "Hummingbirds", correct: true }, 
+		{ text: "Wryneck", correct: false }
+	 ]
+}, 
+{
+	question: "Which animals native to Australia are known for leaving distinctive cubic feces?",
+	answers: [
+		{ text: "Opossums", correct: false }, 
+	  {	text: "Wombats", correct: true }, 
+		{ text: "Koalas", correct: false }, 
+		{ text: "Tasmanian devils", correct: false}
+	]
+},
+{ question: "Who operates the national register of pedigree dogs in the United Kingdom?",
+answers: [
+	{ text: "Breed Pedigrees", correct: false }, 
+	{ text: "The Kennel Club", correct: true }, 
+	{ text: "Lancashire Heeler Pedigree", correct: false },
+  { text: "Hailait's", correct: false }
+ ]
+},
+{
+question: "What is the longest it is possible for a snail to sleep for?",
+answers: [
+	{ text: "3 years", correct: true }, 
+	{ text: "3 days", correct: false }, 
+	{ text: "3 hours", correct: false }, 
+	{ text: "3 weeks", correct: false }
+ ]
+}, 
+{
+question: "Which whale possesses a large “tusk” because of its protruding canine tooth?",
+answers: [
+	{ text: "Sperm whale", correct: false }, 
+	{ text: "Narwhal or narwhale", correct: true},
+  { text: "Orca", correct: false },
+  { text: "Blue whale", correct: false }
+]
+},
+{ question: "Which animal has the scientific name 'Cavia porcellus'?",
+	answers: [
+		{ text: "Guinea pigs", correct: true }, 
+		{ text: "Mangalica", correct: false }, 
+		{ text: "Hampshire pig", correct: false }, 
+		{ text: "Berkshire pig", correct: false }
+	 ]
+},
+ {
+	question: "Manatees are large marine mammals sometimes known as 'sea what'?",
+	answers: [
+		{ text: "Sea Hippopotamus", correct: false }, 
+		{ text: "Sea pigs", correct: false }, 
+		{ text: "Sea cows", correct: true }, 
+		{ text: "Sea Whales", correct: false }
+	 ]
+}, 
+{
+	question: "Which large animal annually kills more people than any other large animal in Africa?",
+	answers: [
+		{ text: "Lion", correct: false }, 
+	  {	text: "Hippopotamus", correct: true }, 
+		{ text: "Leopard", correct: false }, 
+		{ text: "Tigers", correct: false}
+	]
+},
+{ question: "Which long-haired domesticated bovid is found throughout the Himalayas?",
+answers: [
+	{ text: "Bison", correct: false }, 
+	{ text: "Yak", correct: true }, 
+	{ text: "Cattle", correct: false },
+  { text: "Water buffalo", correct: false }
+ ]
+},
+{
+question: "Daddy longlegs are venomous but can-t bite people",
+answers: [
+	{ text: "False", correct: true }, 
+	{ text: "True", correct: false }
+ ]
+}, 
+{
+question: "What name is given to the highest part of the back of a horse, behind the neck and between the shoulders?",
+answers: [
+	{ text: "Chest", correct: false }, 
+	{ text: "Withers", correct: true},
+  { text: "Shoulder", correct: false },
+  { text: "Barrel", correct: false }
+]
+},
+{ question: "Which common physical characteristic does the chow share with giraffes, polar bears, and Jersey cattle?",
+	answers: [
+		{ text: "Black tongues", correct: true }, 
+		{ text: "Short hair", correct: false }, 
+		{ text: "Short tail", correct: false }, 
+		{ text: "Horns", correct: false }
+	 ]
+},
+ {
+	question: "Which farmyard animal is the most intelligent?",
+	answers: [
+		{ text: "Sheeps", correct: false }, 
+		{ text: "Cows", correct: false }, 
+		{ text: "Pigs", correct: true }, 
+		{ text: "Goats", correct: false }
+	 ]
+}, 
+{
+	question: "What is the collective noun for a group of hedgehogs?",
+	answers: [
+		{ text: "Pack", correct: false }, 
+	  {	text: "Prickle", correct: true }, 
+		{ text: "Flock", correct: false }, 
+		{ text: "Herd", correct: false}
+	]
+},
+{ question: "Zeus, a family pet from Michigan, USA, is the tallest dog ever verified by Guinness World Records - what breed is he?",
+answers: [
+	{ text: "Anatolian Shepherd", correct: false }, 
+	{ text: "A Great Dane", correct: true }, 
+	{ text: "Bullmastiff", correct: false },
+  { text: "Tibetan Mastiff", correct: false }
+ ]
+},
+{
+question: "What is the national animal of Bangladesh, Malaysia, and South Korea?",
+answers: [
+	{ text: "Tiger", correct: true }, 
+	{ text: "Lion", correct: false },
+  { text: "Leopard", correct: false },
+  { text: "Pantera", correct: false }
+ ]
+}, 
+{
+question: "It gets the name 'box' from its cube-shape and its stings can be fatal to humans what is it?",
+answers: [
+	{ text: "Corals", correct: false }, 
+	{ text: "Jellyfish", correct: true},
+  { text: "Catfish", correct: false },
+  { text: "Anemones", correct: false }
+]
+}
  ];
 
 
