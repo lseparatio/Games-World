@@ -48,7 +48,11 @@ p {
 
 .btn {
   font-family: "Luxurious Roman", cursive;
-  background-color: #ff5f0a;
+  border-color: #ff5f0a;
+  color: #ffffff;
+}
+
+.btn:hover {
   color: #ffffff;
 }
 
@@ -58,22 +62,28 @@ p {
 
 .correct {
   color: #ffffff;
-  background-color: #17fc03;
+  background-color: #0A5F02;
+  border-color: #0A5F02;
 }
 
 .correct-text {
-  background-color: #17fc03;
+  background-color: #0A5F02;
+  border: 1px solid #0A5F02;
+  border-radius: 25px;
   color: #ffffff;
 }
 
 .wrong-text {
-  background-color: #e41111;
+  background-color: #B40808;
+  border: 1px solid #B40808;
+  border-radius: 25px;
   color: #ffffff;
 }
 
 .wrong {
-  background-color: #e41111;
+  background-color: #B40808;
   color: #ffffff;
+  border-color: #B40808;
 }
 
 .buttons-grid {
@@ -110,10 +120,13 @@ footer {
 }
 
 #navbar-brand,
-#github {
+#github,
+#next-btn,
+#finish-btn,
+#choose-topic {
   font-family: "Luxurious Roman", cursive;
   text-decoration: none;
-  background-color: #ff5f0a;
+  background-color: #183bff;
   border: 1px solid #ff5f0a;
   border-radius: 25px;
   color: #ffffff;
@@ -121,19 +134,15 @@ footer {
   padding-right: 10px;
 }
 
-.btn:hover {
-  color: #ffffff;
-}
-
 #navbar-brand:hover,
 #github:hover,
 .answer-btn:hover,
 #submit-button:hover,
-#next-btn,
-#finish-btn,
-#choose-topic {
+#next-btn:hover,
+#finish-btn:hover,
+#choose-topic:hover {
   font-family: "Luxurious Roman", cursive;
-  background-color: #ff8a00;
+  background-color: #993600;
   color: #ffffff;
   transition-duration: 1s;
   padding-left: 15px;
