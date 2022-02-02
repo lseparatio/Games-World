@@ -103,7 +103,7 @@ function chooseQuizCategory() {
 <img src="assets/img/kids.jpg" class="card-img-top" alt="Kids Game">
 <div class="card-body">
 	<h5 class="card-title">Kids Quiz</h5>
-	<p class="card-text">30 Quiz Questions</p>
+	<p class="card-text">6 Quiz Questions</p>
 	<div class="d-grid gap-2">
   <button id="gameKids" class="btn answer-btn" type="button">Play Quiz</button>
 	</div>
