@@ -1,8 +1,39 @@
-# Games-World
-An website with games created in HTML, CSS and JavaScript
+# Welcome to Games-World project
 
-https://lseparatio.github.io/Games-World/
+This project is an example of a quiz created in  HTML, CSS and JavaScript
 
-Images from: https://www.freeimages.com/
+See this project on live enviroment on GitHub Pages here: <https://lseparatio.github.io/Games-World/>
 
-Color adjusted for better contrast ratio using: https://webaim.org/resources/contrastchecker/
+![Website on different screen sizes](readme-assets/images/screens.jpg)
+
+## Features
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Images from: <https://www.freeimages.com/>
+
+Color adjusted for better contrast ratio using: <https://webaim.org/resources/contrastchecker/>
