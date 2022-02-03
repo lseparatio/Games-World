@@ -27,12 +27,26 @@ See this project on live enviroment on GitHub Pages here: <https://lseparatio.gi
 ### First Screen
 First Screen was designed to present the website for user in a friendly manner and to ask for user name.
 - First Screen Desktop
+
 ![First Screen Desktop](readme-assets/images/first-screen-desktop.png)
 
 - First Screen Mobile
+
 ![First Screen Mobile](readme-assets/images/first-screen-mobile.png)
+
+### User name validation screens
+
+- Empty name validation screen
+
+![Empty name validation screen](readme-assets/images/empty-username-validation.png)
+
+- Special characters validation screen
+
+![First Screen Mobile](readme-assets/images/wrong-caracters-validation.png)
 </details>
 
 Images from: <https://www.freeimages.com/>
 
 Color adjusted for better contrast ratio using: <https://webaim.org/resources/contrastchecker/>
+
+
