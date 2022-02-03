@@ -34,7 +34,7 @@ First Screen was designed to present the website for user in a friendly manner a
 
 ![First Screen Mobile](readme-assets/images/first-screen-mobile.png)
 
-### User name validation screens
+### Name validation screens
 
 - Empty name validation screen
 
@@ -43,6 +43,20 @@ First Screen was designed to present the website for user in a friendly manner a
 - Special characters validation screen
 
 ![First Screen Mobile](readme-assets/images/wrong-caracters-validation.png)
+
+### Choose topic screen
+
+- Choose topic screen desktop
+
+![Choose topic screen desktop](readme-assets/images/choose-screen-desktop.png)
+
+- Choose topic screen tablet
+
+![Choose topic screen tablet](readme-assets/images/choose-screen-tablet.png)
+
+- Choose topic screen mobile
+
+![Choose topic screen mobile](readme-assets/images/choose-screen-mobile.png)
 </details>
 
 Images from: <https://www.freeimages.com/>
