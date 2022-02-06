@@ -26,6 +26,7 @@ See this project on live enviroment on GitHub Pages here: <https://lseparatio.gi
 
 ### First Screen
 First Screen was designed to present the website for user in a friendly manner and to ask for user name.
+
 - First Screen Desktop
 
 ![First Screen Desktop](readme-assets/images/first-screen-desktop.png)
@@ -46,6 +47,8 @@ First Screen was designed to present the website for user in a friendly manner a
 
 ### Choose topic screen
 
+Choose topic screen is designed to allow the user to choose an topic of the quiz. Page is fully responsive.
+
 - Choose topic screen desktop
 
 ![Choose topic screen desktop](readme-assets/images/choose-screen-desktop.png)
@@ -62,5 +65,3 @@ First Screen was designed to present the website for user in a friendly manner a
 Images from: <https://www.freeimages.com/>
 
 Color adjusted for better contrast ratio using: <https://webaim.org/resources/contrastchecker/>
-
-
