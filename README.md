@@ -60,6 +60,30 @@ Choose topic screen is designed to allow the user to choose an topic of the quiz
 - Choose topic screen mobile
 
 ![Choose topic screen mobile](readme-assets/images/choose-screen-mobile.png)
+
+### Questions screen
+
+This screen is designed to rondom show questions and to alow user to select an answer only by disabling the button after any of button is clicked.
+
+- Questions screen desktop
+
+![Questions screen desktop](readme-assets/images/question-screen-desktop.png)
+
+- Questions screen mobile
+
+![Questions screen mobile](readme-assets/images/question-screen-mobile.png)
+
+### Answered question screen
+
+When user is selecting an answer buttons are getting disabled to don't alow user to change the answer. Buttons are changing the colors in red and green to provide feedback if user was right.
+
+- Answered question screen desktop
+
+![Answered question screen desktop](readme-assets/images/answered-screen-desktop.png)
+
+- Answered question screen mobile 
+
+![Answered question screen](readme-assets/images/answered-screen-mobile.png)
 </details>
 
 Images from: <https://www.freeimages.com/>
