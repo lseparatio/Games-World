@@ -186,5 +186,4 @@ All colors adjusted for optimal contrast ratio using: <https://webaim.org/resour
 ### Images
 
 - Images was taken from <https://www.freeimages.com/>
-  
 </details>
