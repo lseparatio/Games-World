@@ -2,6 +2,8 @@
 let shuffledQuestions = "";
 let currentQuestionIndex = "";
 
+console.log("Are you trying to cheat? Is not nice please close the console and play nice! Kind Regards, Ionut Zapototchi");
+
 document.getElementById("inputName").focus();
 
 document.getElementById("inputName").addEventListener("keydown", function(event) {
