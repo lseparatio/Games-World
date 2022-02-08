@@ -240,3 +240,30 @@ All colors adjusted for optimal contrast ratio using: <https://webaim.org/resour
 
 ![JavaScript JsHint test](readme-assets/images/tests/jshint-test.png)
 </details>
+
+### Chrome console test
+
+- No error in console. Tested complete life cycle of game manually.
+
+## Deployment
+
+### This website was deployed on GitHub pages. Steps
+
+- In the GitHub repository, navigate to the Settings tab
+- In left menu, down find Pages tab
+- From the source section drop-down menu, select the Main Branch
+- Once all is done your link is displayed.
+
+This particular deployment can be seen on: <https://lseparatio.github.io/Games-World/>
+
+## Credits
+
+- Bootstrap - For well documented css framework
+- FreeImages - For images
+- GIMP - For Image processing
+- Favicon.io - For Favicon
+- Google Fonts - For Luxurious Roman font.
+- Code Institute - For brilliant lessons from where i learn to do this.
+- FreePubQuiz - For quizes <http://www.freepubquiz.co.uk/>
+
+## Thank you for reading. For any questions don't hesitate to contact me. Kind Regards, Ionut Zapototchi
