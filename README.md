@@ -82,7 +82,7 @@ When user is selecting an answer buttons are getting disabled to don't allow use
 
 ![Answered question screen desktop](readme-assets/images/answered-screen-desktop.png)
 
-- Answered question screen mobile 
+- Answered question screen mobile
 
 ![Answered question screen](readme-assets/images/answered-screen-mobile.png)
 
@@ -94,7 +94,7 @@ Last screen is designed to provide feedback to user. Will be shown a different m
 
 ![Answered question screen desktop](readme-assets/images/feedback-screen-desktop.png)
 
-- Feedback screen mobile 
+- Feedback screen mobile
 
 ![Answered question screen](readme-assets/images/feedback-screen-mobile.png)
 </details>
@@ -186,4 +186,31 @@ All colors adjusted for optimal contrast ratio using: <https://webaim.org/resour
 ### Images
 
 - Images was taken from <https://www.freeimages.com/>
+
+</details>
+
+## Testing
+
+<details>
+<summary>LightHouse  Mobile test, click to expand.</summary>
+
+![LightHouse test front page](readme-assets/images/tests/lighthouse-test-mobile.png)
+</details>
+
+<details>
+<summary>LightHouse  Desktop test, click to expand.</summary>
+
+![LightHouse test front page](readme-assets/images/tests/lighthouse-test-desktop.png)
+</details>
+
+## Validator testing
+
+- No errors were returned when passing through the HTML official validator.
+
+### HTML validator test link: <a href="https://validator.w3.org/nu/?doc=https%3A%2F%2Flseparatio.github.io%2FGames-World%2F" rel="noopener" target="_blank">Click To See</a>
+
+<details>
+<summary>Click to expand image.</summary>
+
+![W3 validator check for front page with no errors](readme-assets/images/tests/html-validator.png)
 </details>
