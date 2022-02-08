@@ -212,5 +212,31 @@ All colors adjusted for optimal contrast ratio using: <https://webaim.org/resour
 <details>
 <summary>Click to expand image.</summary>
 
-![W3 validator check for front page with no errors](readme-assets/images/tests/html-validator.png)
+![W3 html validator check for front page with no errors](readme-assets/images/tests/html-validator.png)
+</details>
+
+- No errors were returned when passing through the CSS official validator.
+
+### CSS validator test link: <a href="https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Flseparatio.github.io%2FGames-World%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=" rel="noopener" target="_blank">Click To See</a>
+
+<details>
+<summary>Click to expand image.</summary>
+
+![W3 css validator check for front page with no errors](readme-assets/images/tests/css-validator.png)
+</details>
+
+### JavaScript BeautifyTools test
+
+<details>
+<summary>Click to expand image.</summary>
+
+![JavaScript BeautifyTools test](readme-assets/images/tests/beutify-tools-test.png)
+</details>
+
+### JavaScript JsHint test
+
+<details>
+<summary>Click to expand image.</summary>
+
+![JavaScript JsHint test](readme-assets/images/tests/jshint-test.png)
 </details>

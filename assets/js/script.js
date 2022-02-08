@@ -277,6 +277,7 @@ function ceckAnswer() {
 }
 
 function lastScreen(){
+  "use strict";
   setTimeout(function(){
   let finalCorrectScore = parseInt(document.getElementById("correctAnswers").innerText);
   let finalWrongScore = parseInt(document.getElementById("wrongAnswers").innerText);
