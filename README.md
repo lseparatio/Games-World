@@ -263,6 +263,14 @@ Responsive Design Checker (Passing all checks)
 
 This particular deployment can be seen on: <https://lseparatio.github.io/Games-World/>
 
+### Clone project
+
+- In GitHub repo press in the top menu: Code > Download Zip
+- Save in your local enviroment
+- Unzip 
+- Load unzipped folder / files in your preferred IDE
+
+
 ## Credits / Technologies
 
 - Bootstrap - For well documented css framework
