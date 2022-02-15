@@ -196,7 +196,7 @@ All colors adjusted for optimal contrast ratio using: <https://webaim.org/resour
 
 Responsive Design Checker (Passing all checks)
 
-<https://responsivedesignchecker.com/checker.php?url=https%3A%2F%2Flseparatio.github.io%2FGames-World%2F&width=1400&height=700>
+<a href="https://responsivedesignchecker.com/checker.php?url=https%3A%2F%2Flseparatio.github.io%2FGames-World%2F&width=1400&height=700" rel="noopener" target="_blank">Click To See</a>
 
 <details>
 <summary>LightHouse  Mobile test, click to expand.</summary>
