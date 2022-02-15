@@ -170,10 +170,13 @@ Only choose topic screen requires a specific design for tablet. Rest of screens 
 ![Feedback screen Desktop Example](readme-assets/wireframes/feedback-screen-desktop.png)
 </details>
 
-### Tools
+### Tools / Technologies
 
 - Visual Studio Code
-- GIMP ( For image editing. Briliant open-source editor. )
+- HTML
+- CSS
+- JavaScript
+- GIMP
 - Microsoft Paint
 - Bootstrap 5.1.3
 
@@ -190,6 +193,10 @@ All colors adjusted for optimal contrast ratio using: <https://webaim.org/resour
 </details>
 
 ## Testing
+
+Responsive Design Checker (Passing all checks)
+
+<https://responsivedesignchecker.com/checker.php?url=https%3A%2F%2Flseparatio.github.io%2FGames-World%2F&width=1400&height=700>
 
 <details>
 <summary>LightHouse  Mobile test, click to expand.</summary>
@@ -256,7 +263,7 @@ All colors adjusted for optimal contrast ratio using: <https://webaim.org/resour
 
 This particular deployment can be seen on: <https://lseparatio.github.io/Games-World/>
 
-## Credits
+## Credits / Technologies
 
 - Bootstrap - For well documented css framework
 - FreeImages - For images
